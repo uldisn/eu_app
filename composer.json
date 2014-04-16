@@ -1,0 +1,13 @@
+{
+    "name": "uldisn/parkoil_app",
+    "description": "ParkOil ERP",
+    "keywords": ["parkoil","erp","yii","phundament"],
+    "type": "yii-app",
+    "license": "BSD-2-Clause",
+    "authors": [
+        {
+            "name": "Uldis Nelsons",
+            "email": "uldisnelsons@gmail.com"
+        }
+    ]
+}
