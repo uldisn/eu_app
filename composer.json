@@ -1,7 +1,7 @@
 {
-    "name": "uldisn/parkoil_app",
-    "description": "ParkOil ERP",
-    "keywords": ["parkoil","erp","yii","phundament"],
+    "name": "uldisn/eu_app",
+    "description": "EU ERP",
+    "keywords": ["erp","yii","phundament"],
     "type": "yii-app",
     "license": "BSD-2-Clause",
     "authors": [
