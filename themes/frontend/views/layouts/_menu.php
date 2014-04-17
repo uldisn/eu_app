@@ -42,6 +42,11 @@ $this->widget('application.widgets.TbAceMenu', array(
                     'visible' => Yii::app()->user->checkAccess('Company.*'),
                 ),
                 array(
+                    'label' => Yii::t('dbr_app', 'Persons'),
+                    'url' => array('/d2person/pprsPerson'),
+                    'visible' => Yii::app()->user->checkAccess('DataCardEditor'),
+                ),
+                array(
                     'label' => Yii::t('dbr_app', 'Countries'),
                     'url' => array('/d2company/ccntCountry'),
                     'visible' => Yii::app()->user->checkAccess('DataCardEditor'),
