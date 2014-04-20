@@ -122,8 +122,18 @@ $mainConfig = array(
         'vendor.bwoester.yii-event-interceptor.*',
         'vendor.dbrisinajumi.d2person.*',                
         'vendor.dbrisinajumi.d2person.models.*',                
+        'vendor.dbrisinajumi.trucks.*',                
+        'vendor.dbrisinajumi.trucks.models.*',                
+        'vendor.uldisn.vvoy.*',                
+        'vendor.uldisn.vvoy.models.*',                
     ),
     'modules'    => array(
+        'vvoy' => array( //++
+            'class' => 'vendor.uldisn.vvoy.VvoyModule',
+        ),
+        'trucks' => array( //++
+            'class' => 'vendor.dbrisinajumi.trucks.TrucksModule',
+        ),
         'd2person' => array( //++
             'class' => 'vendor.dbrisinajumi.d2person.D2personModule',
         ),
