@@ -33,60 +33,60 @@ $this->widget('application.widgets.TbAceMenu', array(
         ),
         array(
             'label' => Yii::t('dbr_app', 'Office'),
-            'visible' => Yii::app()->user->checkAccess('Company.*'),
+            'visible' => Yii::app()->user->checkAccess(ROLE_FINANCES),
             'icon' => 'building',
             'items' => array(
                 array(
                     'label' => Yii::t('dbr_app', 'Companies'),
                     'url' => array('/d2company/ccmpCompany'),
-                    'visible' => Yii::app()->user->checkAccess('Company.*'),
+                    'visible' => Yii::app()->user->checkAccess(ROLE_FINANCES),
                 ),
                 array(
                     'label' => Yii::t('dbr_app', 'Persons'),
                     'url' => array('/d2person/pprsPerson'),
-                    'visible' => Yii::app()->user->checkAccess('DataCardEditor'),
+                    'visible' => Yii::app()->user->checkAccess(ROLE_FINANCES),
                 ),
                 array(
                     'label' => Yii::t('dbr_app', 'Countries'),
                     'url' => array('/d2company/ccntCountry'),
-                    'visible' => Yii::app()->user->checkAccess('DataCardEditor'),
+                    'visible' => Yii::app()->user->checkAccess(ROLE_FINANCES),
                 ),
                 array(
                     'label' => Yii::t('dbr_app', 'Trucks'),
                     'url' => array('/trucks/vtrcTruck'),
-                    'visible' => Yii::app()->user->checkAccess('DataCardEditor'),
+                    'visible' => Yii::app()->user->checkAccess(ROLE_FINANCES),
                 ),
                 array(
                     'label' => Yii::t('dbr_app', 'Trailers'),
                     'url' => array('/trucks/vtrlTrailer'),
-                    'visible' => Yii::app()->user->checkAccess('DataCardEditor'),
+                    'visible' => Yii::app()->user->checkAccess(ROLE_FINANCES),
                 ),
             )
         ),
         array(
             'label' => Yii::t('dbr_app', 'Voyages'),
-            'visible' => Yii::app()->user->checkAccess('Company.*'),
+            'visible' => Yii::app()->user->checkAccess(ROLE_FINANCES),
             'icon' => 'road',
             'items' => array(
                 array(
                     'label' => Yii::t('dbr_app', 'Voyages'),
                     'url' => array('/vvoy/vvoyVoyage'),
-                    'visible' => Yii::app()->user->checkAccess('Company.*'),
+                    'visible' => Yii::app()->user->checkAccess(ROLE_FINANCES),
                 ),
                 array(
                     'label' => Yii::t('dbr_app', 'Points'),
                     'url' => array('/vvoy/vpntPoint'),
-                    'visible' => Yii::app()->user->checkAccess('Company.*'),
+                    'visible' => Yii::app()->user->checkAccess(ROLE_FINANCES),
                 ),
                 array(
                     'label' => Yii::t('dbr_app', 'Expense positions'),
                     'url' => array('/vvoy/vepoExpensesPositions'),
-                    'visible' => Yii::app()->user->checkAccess('Company.*'),
+                    'visible' => Yii::app()->user->checkAccess(ROLE_FINANCES),
                 ),
                 array(
                     'label' => Yii::t('dbr_app', 'Contracts'),
                     'url' => array('/vvoy/vcntContract'),
-                    'visible' => Yii::app()->user->checkAccess('Company.*'),
+                    'visible' => Yii::app()->user->checkAccess(ROLE_FINANCES),
                 ),
             )
         ),
