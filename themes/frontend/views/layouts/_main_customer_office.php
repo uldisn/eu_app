@@ -45,7 +45,7 @@
 			<div class="navbar-inner">
 				<div class="container-fluid">
                                     <div class="logo">
-                                     <?php  echo CHtml::image($app_asset_path.'/img/ParkOilLogoTransparent.png'); ?>
+                                     <?php  //echo CHtml::image($app_asset_path.'/img/ParkOilLogoTransparent.png'); ?>
                                         
                                     </div>
                                     
@@ -170,7 +170,7 @@
                                    </div> <!-- lists -->      
                                    
                                     <div class="header-parkoil">
-                                       Lietuva <?php echo Yii::t('dbr_app', 'customer office'); ?> <i class="icon-phone"></i> (444) 777777777
+                                      TRUCKS (444) 777777777
                                     </div>  
 				</div><!-- /.container-fluid -->
 			</div><!-- /.navbar-inner -->

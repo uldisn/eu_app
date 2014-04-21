@@ -69,7 +69,7 @@ $aMenuOfficeCompanies = array(
 $this->widget(
     'TbNavbar', array(
     'collapse' => true,
-            'brand' => '<img alt="" src="/assets/7d883f12/img/ParkOilLogoTransparent.png">',
+           // 'brand' => '<img alt="" src="/assets/7d883f12/img/ParkOilLogoTransparent.png">',
             'brandOptions' => array('class' => 'parkoil_logo'),
     'fixed' => false,
             'htmlOptions' => array('class' => 'pull-left'),

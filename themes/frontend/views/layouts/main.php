@@ -14,7 +14,6 @@
 <?php
 
 if (DbrUser::isCustomerOfficeUser() || Yii::app()->user->isGuest) {
-
     $file = Yii::getPathOfAlias('application.themes.frontend.views.layouts') . DIRECTORY_SEPARATOR . '_main_customer_office.php';
 } else {
     $file = Yii::getPathOfAlias('application.themes.frontend.views.layouts') . DIRECTORY_SEPARATOR . '_main_regular.php';
