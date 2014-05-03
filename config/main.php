@@ -126,8 +126,12 @@ $mainConfig = array(
         'vendor.dbrisinajumi.trucks.models.*',                
         'vendor.uldisn.vvoy.*',                
         'vendor.uldisn.vvoy.models.*',                
+        'vendor.uldisn.hill.models.*'
     ),
     'modules'    => array(
+        'hill' => array( //++
+            'class' => 'vendor.uldisn.hill.HillModule',
+        ),
         'vvoy' => array( //++
             'class' => 'vendor.uldisn.vvoy.VvoyModule',
         ),
@@ -452,8 +456,7 @@ $mainConfig = array(
         //X-editable config
         'editable'      => array(
             'class'    => 'editable.EditableConfig',
-            //'form'     => 'abootstrap',
-            'form'     => 'bootstrap',
+            'form'     => 'yii_bootstrap',
             'mode'     => 'popup',
             'defaults' => array(
                 'emptytext' => 'Click to edit',

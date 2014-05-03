@@ -20,9 +20,14 @@ $this->widget('application.widgets.TbAceMenu', array(
                     'visible' => Yii::app()->user->checkAccess('Company.*'),
                 ),
                 array(
-                    'label' => Yii::t('dbr_app', 'Fuel type'),
-                    'url' => array('/fueling/bcftFuelType'),
-                    'visible' => Yii::app()->user->checkAccess('Fueltype'),
+                    'label' => Yii::t('dbr_app', 'Truck/trailer services'),
+                    'url' => array('/trucks/vsrvServices'),
+                    'visible' => Yii::app()->user->checkAccess(ROLE_FINANCES),
+                ),
+                array(
+                    'label' => Yii::t('dbr_app', 'Truck/trailer doc. types'),
+                    'url' => array('/trucks/vtdtTruckDocType'),
+                    'visible' => Yii::app()->user->checkAccess(ROLE_FINANCES),
                 ),
                 array(
                     'label' => Yii::t('dbr_app', 'Users'),

@@ -209,3 +209,7 @@ li.nav-condensed  a {
 .row {
     margin-left: 0;
 }
+
+.grid-view-no-details {
+    padding-top: 0px;
+}
