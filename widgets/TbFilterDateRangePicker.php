@@ -62,7 +62,7 @@ class TbFilterDateRangePicker extends TbDateRangePicker {
                 ),
             ),
             'locale' => array(
-                'applyLabel' => Yii::t('TbFilterDateRangePicker', 'Applay'),
+                'applyLabel' => Yii::t('TbFilterDateRangePicker', 'Apply'),
                 'clearLabel' => Yii::t('TbFilterDateRangePicker', 'Clear'),
                 'fromLabel' => Yii::t('TbFilterDateRangePicker', 'From'),
                 'toLabel' => Yii::t('TbFilterDateRangePicker', 'To'),
