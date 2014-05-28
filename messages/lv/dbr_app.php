@@ -41,4 +41,8 @@ return array (
   'Refueling' => 'Uzpildīšana',
   'Reports' => 'Atskaites',
   'Weekly report' => 'Nedēļu atskaites',
+  'Trailers' => 'Piekabes',
+  'Trucks' => 'Vilcēji',
+  'Truck/trailer services' => 'Vilc./Piek. darbi',
+  'Truck/trailer doc. types' => 'Vilc./Piek. dok. veidi',
 );

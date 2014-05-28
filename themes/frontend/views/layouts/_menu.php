@@ -66,6 +66,16 @@ $this->widget('application.widgets.TbAceMenu', array(
                     'url' => array('/trucks/vtrlTrailer'),
                     'visible' => Yii::app()->user->checkAccess(ROLE_FINANCES),
                 ),
+                array(
+                    'label' => Yii::t('dbr_app', 'Odometers Replacements'),
+                    'url' => array('/trucks/vtcoTrucOdoChanges'),
+                    'visible' => Yii::app()->user->checkAccess(ROLE_FINANCES),
+                ),
+                array(
+                    'label' => Yii::t('dbr_app', 'Odometers Readings'),
+                    'url' => array('/trucks/vtroTruckOdometer'),
+                    'visible' => Yii::app()->user->checkAccess(ROLE_FINANCES),
+                ),
             )
         ),
         array(

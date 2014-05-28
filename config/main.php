@@ -586,6 +586,10 @@ $mainConfig = array(
                     'decimalSeparator' => '.',
                     'rowHeight' => 20,
                 ),
+                'TbBreadcrumbs' => array(
+                    //ACE
+                    'separator' => '<i class="icon-angle-right arrow-icon"></i>',  
+                ),
             ),
 
         ),
