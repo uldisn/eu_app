@@ -61,7 +61,7 @@ $consoleConfig = array(
                 //'p3media'               => 'vendor.phundament.p3media.migrations',
                 //'ckeditor-configurator' => 'vendor.schmunk42.ckeditor-configurator.migrations',
                 //'audittrail'            => 'vendor.dbrisinajumi.audittrail.migrations',
-                'finv'                  => 'vendor.dbrisinajumi.finv.migrations',
+                'd2finv'                  => 'vendor.dbrisinajumi.d2finv.migrations',
             ),
             // you can customize the modules migrations subdirectory which is used when you are using yii module config
             'migrationSubPath'      => 'migrations',
