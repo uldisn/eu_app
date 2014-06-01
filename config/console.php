@@ -12,7 +12,7 @@ $webappCommand = array(
     'yiic',
     'webapp',
     'create',
-    realpath(dirname(__FILE__) . '/../../'),
+    realpath(dirname(__FILE__) . '/../../../'),
     'git',
     '--interactive=' . (getenv('PHUNDAMENT_TEST') ? '0' : '1')
 );
@@ -25,8 +25,8 @@ $mainConfig = require('main.php');
 
 $consoleConfig = array(
     'aliases'    => array(
-        'vendor'  => dirname(__FILE__) . '/../../vendor',
-        'webroot' => dirname(__FILE__) . '/../../www',
+        'vendor' => $applicationDirectory . '/../../../vendor',
+        'webroot' => $applicationDirectory . '/../../../www',
         'gii-template-collection'              => 'vendor.phundament.gii-template-collection', // TODO
         'audittrail' => 'vendor.dbrisinajumi.audittrail',
     ),
