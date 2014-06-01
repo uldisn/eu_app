@@ -141,8 +141,8 @@ $mainConfig = array(
         'd2person' => array( //++
             'class' => 'vendor.dbrisinajumi.d2person.D2personModule',
         ),
-        'finv' => array( //++
-            'class' => 'vendor.dbrisinajumi.finv.FinvModule',
+        'd2finv' => array( //++
+            'class' => 'vendor.dbrisinajumi.d2finv.D2finvModule',
         ),
 //        'd2company'=> array( //++
 //            'class' => 'vendor.dbrisinajumi.d2company.D2companyModule',//++
