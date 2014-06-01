@@ -117,7 +117,7 @@ $this->widget('application.widgets.TbAceMenu', array(
                 ),
                 array(
                     'label' => Yii::t('dbr_app', 'Invoices'),
-                    'url' => array('/D2finv/FinvInvoice'),
+                    'url' => array('/d2finv/FinvInvoice'),
                     'visible' => Yii::app()->user->checkAccess(ROLE_FINANCES),
                 ),
                 array(
