@@ -340,7 +340,7 @@ $mainConfig = array(
 				'path'=>'TbDetailView',
 				'options'=>array(),
 			),
-            'UserAdminRoles' => array('Accounting','Cars','DataCards','Finance','FuelOperator','UserAdmin',),
+            'UserAdminRoles' => array('Accounting','Cars','DataCards','Finance','FuelOperator','UserAdmin','InvoiceEdit','InvoiceView',),
 		),
         'audittrail' => array(//++
             'class' => 'vendor.dbrisinajumi.audittrail.AudittrailModule', 
