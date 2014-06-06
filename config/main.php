@@ -124,6 +124,8 @@ $mainConfig = array(
         'vendor.dbrisinajumi.d2person.models.*',                
         'vendor.dbrisinajumi.trucks.*',                
         'vendor.dbrisinajumi.trucks.models.*',                
+        'vendor.dbrisinajumi.d2finv.*',                
+        'vendor.dbrisinajumi.d2finv.models.*',                
         'vendor.uldisn.vvoy.*',                
         'vendor.uldisn.vvoy.models.*',                
         'vendor.uldisn.hill.models.*'
