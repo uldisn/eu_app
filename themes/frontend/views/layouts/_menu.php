@@ -3,7 +3,7 @@
 
 $user = User::model()->findByPk(Yii::app()->user->id);
 
-$this->widget('application.widgets.TbAceMenu', array(
+$this->widget('vendor.uldisn.ace.widgets.TbAceMenu', array(
     'type' => '',
     'stacked' => false, 
     'htmlOptions' => array('class' => 'nav-list'),
