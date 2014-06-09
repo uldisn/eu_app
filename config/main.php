@@ -343,6 +343,8 @@ $mainConfig = array(
 				'options'=>array(),
 			),
             'UserAdminRoles' => array('Accounting','Cars','DataCards','Finance','FuelOperator','UserAdmin','InvoiceEdit','InvoiceView',),
+            'layout' =>'//layouts/ace',
+            'view' => 'vendor.uldisn.ace.yii-user.views',            
 		),
         'audittrail' => array(//++
             'class' => 'vendor.dbrisinajumi.audittrail.AudittrailModule', 
