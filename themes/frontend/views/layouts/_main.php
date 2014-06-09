@@ -9,9 +9,14 @@
     $cs->registerMetaTag('width=device-width, initial-scale=1.0', 'viewport');
 
     $ace_path = realpath(Yii::getPathOfAlias('vendor.responsiweb') . '/ace-v1.2--bs-v2.3.x/assets');
+    $ace_path_add = realpath(Yii::getPathOfAlias('vendor.uldisn.ace') . '/assets');
 
     $asset_link = Yii::app()->assetManager->publish(
             $ace_path, false, // hash by name
+            -1, // level
+            false); // forceCopy
+    $asset_link_ace_add = Yii::app()->assetManager->publish(
+            $ace_path_add, false, // hash by name
             -1, // level
             false); // forceCopy
 
@@ -24,7 +29,8 @@
     $cs->registerCssFile($asset_link . '/css/ace.min.css');
     $cs->registerCssFile($asset_link . '/css/ace-responsive.min.css');
     $cs->registerCssFile($asset_link . '/css/ace-skins.min.css');
-    $cs->registerCssFile($app_asset_path . '/parkoil-ace.css');    
+    $cs->registerCssFile($asset_link_ace_add . '/css/d2-ace.css');
+    //$cs->registerCssFile($app_asset_path . '/parkoil-ace.css');    
     $cs->registerCssFile($app_asset_path . '/parkoil.css');    
 
     // JS files    
@@ -70,41 +76,27 @@ $this->widget(
     'TbNavbar', array(
     'collapse' => true,
            // 'brand' => '<img alt="" src="/assets/7d883f12/img/ParkOilLogoTransparent.png">',
-            'brandOptions' => array('class' => 'parkoil_logo'),
+            //'brandOptions' => array('class' => 'parkoil_logo'),
     'fixed' => false,
-            'htmlOptions' => array('class' => 'pull-left'),
+            //'htmlOptions' => array('class' => 'pull-left'),
+            'htmlOptions' => array('class' => 'navbar'),
+    'fluid' => true,    
     'items' => array(
         array(
-            'class' => 'TbMenu',
-            'items' => array(
-                array(
-                    'label' => Yii::t('dbr_app', 'My company'),
-                    'url' => array('/d2company/ccmpCompany/view'),
-                    'visible' => DbrUser::isCustomerOfficeUser(),
-                ),
-                array(
-                    'label' => Yii::t('dbr_app', 'Cars'),
-                    'url' => array('/fueling/bcarId'),
-                    'visible' => DbrUser::isCustomerOfficeUser(),
-                ),
-                array(
-                    'label' => Yii::t('dbr_app', 'Refueling'),
-                    'url' => array('/fueling/bfrfFuelRefill'),
-                    'visible' => DbrUser::isCustomerOfficeUser(),
-                ),
-            ),
-        ),
-        array(
-            'class' => 'TbMenu',
-            'htmlOptions' => array('class' => 'pull-right light-blue'),
+            //'class' => 'TbMenu',
+            'class' => 'vendor.uldisn.ace.widgets.TbAceHrMenu',
+            'htmlOptions' => array('class' => 'ace-nav pull-right'),
             'items' => array(
                 $aMenuOfficeCompanies,
                 array(
                     'label' => Yii::app()->language,
                     'icon' => 'globe white',
                     'url' => '#',
+                    //'itemCssClass' => 'light-blue',
                     'items' => array(
-                        array('label' => Yii::t('app', 'Languages')),
+                        array(
+                            'label' => Yii::t('app', 'Languages')
+                            ),
                         array(
                             'label' => 'English',
                             'url' => array_merge(array(''), $_GET, array('lang' => 'en'))
@@ -112,14 +104,6 @@ $this->widget(
                         array(
                             'label' => 'Latviešu',
                             'url' => array_merge(array(''), $_GET, array('lang' => 'lv'))
-                        ),
-                        array(
-                            'label' => 'Lietuvos',
-                            'url' => array_merge(array(''), $_GET, array('lang' => 'lt'))
-                        ),
-                        array(
-                            'label' => 'Русский',
-                            'url' => array_merge(array(''), $_GET, array('lang' => 'ru'))
                         ),
                     ),
                 ),
@@ -171,7 +155,7 @@ $this->widget(
     <?php
     //menu
     $this->renderFile(
-            Yii::getPathOfAlias('application.themes.frontend.views.layouts') . DIRECTORY_SEPARATOR . '_menu.php'
+            Yii::getPathOfAlias('application.themes.frontend.views.layouts') . DIRECTORY_SEPARATOR . '_left_menu.php'
         );
 
    ?>

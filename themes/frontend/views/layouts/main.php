@@ -13,10 +13,10 @@
     <title><?php echo CHtml::encode($this->pageTitle); ?></title>
 <?php
 
-if (DbrUser::isCustomerOfficeUser() || Yii::app()->user->isGuest) {
-    $file = Yii::getPathOfAlias('application.themes.frontend.views.layouts') . DIRECTORY_SEPARATOR . '_main_customer_office.php';
+if (Yii::app()->user->isGuest) {
+    $file = Yii::getPathOfAlias('application.themes.frontend.views.layouts') . DIRECTORY_SEPARATOR . 'ace_logon.php';
 } else {
-    $file = Yii::getPathOfAlias('application.themes.frontend.views.layouts') . DIRECTORY_SEPARATOR . '_main_regular.php';
+    $file = Yii::getPathOfAlias('application.themes.frontend.views.layouts') . DIRECTORY_SEPARATOR . '_main.php';
 }
 $this->renderFile($file, array('content' => $content,'app_asset_path'=>$app_asset_path));
 ?>    

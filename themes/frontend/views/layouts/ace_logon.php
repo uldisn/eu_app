@@ -111,16 +111,6 @@
 										Latviešu
 									</a>
 								</li>
-								<li>
-									<a href="<?php echo Yii::app()->createUrl('',array_merge( $_GET, array('lang' => 'ru')));?>">
-										Русский
-									</a>
-								</li>
-								<li>
-									<a href="<?php echo Yii::app()->createUrl('',array_merge( $_GET, array('lang' => 'lt')));?>">
-										Lietuvių
-									</a>
-								</li>
                                 <li></li>
 
 							</ul>
@@ -169,7 +159,7 @@
                                         
                                    </div> <!-- lists -->      
                                    
-                                    <div class="header-parkoil">
+                                    <div class="header-logon">
                                       TRUCKS (444) 777777777
                                     </div>  
 				</div><!-- /.container-fluid -->
