@@ -57,7 +57,7 @@ $mainConfig = array(
         'vendor'                               => $applicationDirectory . '/../../../vendor',
         // componentns
         'bootstrap'                            => 'vendor.clevertech.yiibooster.src',
-        'editable'                             => 'vendor.dbrisinajumi.x-editable-yii',
+        'editable'                             => 'vendor.vitalets.x-editable-yii',
         // p3widgets
         'jsonEditorView'                       => 'vendor.phundament.p3extensions.widgets.jsonEditorView',
         'ckeditor'                             => 'vendor.phundament.p3extensions.widgets.ckeditor',
@@ -595,7 +595,6 @@ $mainConfig = array(
                     'separator' => '<i class="icon-angle-right arrow-icon"></i>',  
                 ),
             ),
-
         ),
         'request'=>array('enableCsrfValidation'=>false),
 
