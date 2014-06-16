@@ -136,15 +136,19 @@ $mainConfig = array(
         ),
         'vvoy' => array( //++
             'class' => 'vendor.uldisn.vvoy.VvoyModule',
+            'defaultController' => 'vvoyVoyage',
         ),
         'trucks' => array( //++
             'class' => 'vendor.dbrisinajumi.trucks.TrucksModule',
+            'defaultController' => 'vtrcTruck',
         ),
         'd2person' => array( //++
             'class' => 'vendor.dbrisinajumi.d2person.D2personModule',
+            'defaultController' => 'pprsPerson',
         ),
         'd2finv' => array( //++
             'class' => 'vendor.dbrisinajumi.d2finv.D2finvModule',
+            'defaultController' => 'FinvInvoice',
         ),
 //        'd2company'=> array( //++
 //            'class' => 'vendor.dbrisinajumi.d2company.D2companyModule',//++
@@ -154,6 +158,7 @@ $mainConfig = array(
         ),
         'fcrn'=> array( //++
             'class' => 'vendor.dbrisinajumi.fcrn.FcrnModule',//++
+            'defaultController' => 'fcrtCurrencyRate',
         ),
         'd2company'=> array( //++
             'class' => 'vendor.dbrisinajumi.d2company.D2companyModule',//++
@@ -167,6 +172,7 @@ $mainConfig = array(
                 //'company_cars',
                 'company_files',
             ),
+            'defaultController' => 'ccmpCompany',
         ),//++
         'D1Status'=> array( //++
             'class' => 'vendor.dbrisinajumi.d1status.D1StatusModule',//++
@@ -177,9 +183,9 @@ $mainConfig = array(
              'accept_file_types' => '/\.(gif|pdf|dat|jpe?g|png|doc|docx|xls|xlsx)$/i',
          ),          
         // backend for ckeditor styles and templates
-        'person' => array(
-            'class' => 'vendor.dbrisinajumi.person.PersonModule',
-        ),
+//        'person' => array(
+//            'class' => 'vendor.dbrisinajumi.person.PersonModule',
+//        ),
         'email' => array(
             // path to the EmailModule class
             'class' => 'vendor.cornernote.yii-email-module.email.EmailModule',
