@@ -15,7 +15,8 @@
         "dbrisinajumi/audittrail": "dev-master",
         "vitalets/x-editable-yii": "dev-master",
         "uldisn/ace": "dev-master",
-        "dbrisinajumi/d2person": "dev-master",        
+        "dbrisinajumi/d2person": "dev-master",
+        "dbrisinajumi/trucks": "dev-master",        
         "dbrisinajumi/d2finv": "dev-master",
         "uldisn/vvoy": "dev-master"           
      }    
