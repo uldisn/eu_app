@@ -126,6 +126,8 @@ $mainConfig = array(
         'vendor.dbrisinajumi.trucks.models.*',                
         'vendor.dbrisinajumi.d2finv.*',                
         'vendor.dbrisinajumi.d2finv.models.*',                
+        'vendor.dbrisinajumi.d2fixr.*',                
+        'vendor.dbrisinajumi.d2fixr.models.*',                
         'vendor.uldisn.vvoy.*',                
         'vendor.uldisn.vvoy.models.*',                
         'vendor.uldisn.hill.models.*'
@@ -150,9 +152,10 @@ $mainConfig = array(
             'class' => 'vendor.dbrisinajumi.d2finv.D2finvModule',
             'defaultController' => 'FinvInvoice',
         ),
-//        'd2company'=> array( //++
-//            'class' => 'vendor.dbrisinajumi.d2company.D2companyModule',//++
-//        ),
+        'd2fixr' => array( //++
+            'class' => 'vendor.dbrisinajumi.d2fixr.D2fixrModule',
+            //'defaultController' => 'FinvInvoice',
+        ),
         'fueling'=> array( //++
             'class' => 'vendor.uldisn.fuel.FuelingModule',//++
         ),
