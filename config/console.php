@@ -63,6 +63,7 @@ $consoleConfig = array(
                 //'audittrail'            => 'vendor.dbrisinajumi.audittrail.migrations',
                 'd2finv'                  => 'vendor.dbrisinajumi.d2finv.migrations',
 				'vvoy'                    => 'vendor.uldisn.vvoy.migrations',
+				'trucks'                  => 'vendor.dbrisinajumi.trucks.migrations',
             ),
             // you can customize the modules migrations subdirectory which is used when you are using yii module config
             'migrationSubPath'      => 'migrations',
