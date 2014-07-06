@@ -84,6 +84,11 @@ $this->widget('vendor.uldisn.ace.widgets.TbAceMenu', array(
             'icon' => 'road',
             'items' => array(
                 array(
+                    'label' => Yii::t('dbr_app', 'Dashboard'),
+                    'url' => array('/vvoy/dashboard'),
+                    'visible' => Yii::app()->user->checkAccess(ROLE_FINANCES),
+                ),
+                array(
                     'label' => Yii::t('dbr_app', 'Voyages'),
                     'url' => array('/vvoy/vvoyVoyage'),
                     'visible' => Yii::app()->user->checkAccess(ROLE_FINANCES),

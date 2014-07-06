@@ -37,6 +37,7 @@
     $cs->registerScriptFile($asset_link . '/js/ace-extra.min.js');
     $cs->registerScriptFile($asset_link . '/js/ace-elements.min.js',CClientScript::POS_END);
     $cs->registerScriptFile($asset_link . '/js/ace.min.js',CClientScript::POS_END);
+    //$cs->registerScriptFile($asset_link . '/js/uncompressed/ace.js',CClientScript::POS_END);
 
     $user = User::model()->findByPk(Yii::app()->user->id);    
     ?>
