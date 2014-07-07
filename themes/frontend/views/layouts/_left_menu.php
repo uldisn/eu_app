@@ -126,41 +126,9 @@ $this->widget('vendor.uldisn.ace.widgets.TbAceMenu', array(
                     'visible' => (Yii::app()->user->checkAccess('InvoiceEdit') || Yii::app()->user->checkAccess('InvoiceView')),
                 ),
                 array(
-                    'label' => Yii::t('dbr_app', 'Periods'),
-                    'url' => array('/fueling/BprdPeriod'),
-                    'visible' => Yii::app()->user->checkAccess('Periods'),
-                ),
-                array(
-                    'label' => Yii::t('dbr_app', 'Payments'),
-                    'url' => array('/fueling/Invoice'),
-                    'visible' => Yii::app()->user->checkAccess(ROLE_FINANCES),
-                ),
-            )
-        ),
-        array(
-            'label' => Yii::t('dbr_app', 'Fueling'),
-            'icon'=>'tint',
-            'visible' => Yii::app()->user->checkAccess('Fueling'),
-            'items' => array(
-                array(
-                    'label' => Yii::t('dbr_app', 'Fuel statements'),
-                    'url' => array('/fueling/bcbdCompanyBranchDay'),
-                    'visible' => Yii::app()->user->checkAccess('Fueling'),
-                ),
-                array(
-                    'label' => Yii::t('dbr_app', 'Refueling'),
-                    'url' => array('/fueling/bfrfFuelRefill'),
-                    'visible' => Yii::app()->user->checkAccess('Fueling'),
-                ),
-                array(
-                    'label' => Yii::t('dbr_app', 'Cars'),
-                    'url' => array('/fueling/bcarId'),
-                    'visible' => Yii::app()->user->checkAccess('Fueling'),
-                ),
-                array(
-                    'label' => Yii::t('dbr_app', 'Fuel price'),
-                    'url' => array('/fueling/bfprFuelPrice'),
-                    'visible' => Yii::app()->user->checkAccess('Fuelprice'),
+                    'label' => Yii::t('dbr_app', 'Exp.Positons'),
+                    'url' => array('/d2fixr/FixrFiitXRef/FinvInvoice'),
+                    'visible' => (Yii::app()->user->checkAccess('InvoiceEdit') || Yii::app()->user->checkAccess('InvoiceView')),
                 ),
             )
         ),
@@ -171,49 +139,10 @@ $this->widget('vendor.uldisn.ace.widgets.TbAceMenu', array(
             'items' => array(
                 array(
                     'label' => Yii::t('dbr_app', 'Weekly report'),
-                    'url' => array('/fueling/reportGrid/GridClientWeek'),
+                    'url' => array(''),
                     'visible' => Yii::app()->user->checkAccess('Reports'),
                 ),
-                array(
-                    'label' => Yii::t('dbr_app', 'Daily report by Customer'),
-                    'url' => array('/fueling/reportGrid/Grid&interval=daily'),
-                    'visible' => Yii::app()->user->checkAccess('Reports'),
-                ),
-                array(
-                    'label' => Yii::t('dbr_app', 'Daily report by FS'),
-                    'url' => array('/fueling/reportGrid/Grid&group=station&interval=daily'),
-                    'visible' => Yii::app()->user->checkAccess('Reports'),
-                ),
-                array(
-                    'label' => Yii::t('dbr_app', 'Monthly report by Customer'),
-                    'url' => array('/fueling/reportGrid/Grid&interval=monthly'),
-                    'visible' => Yii::app()->user->checkAccess('Reports'),
-                ),
-                array(
-                    'label' => Yii::t('dbr_app', 'Actual period'),
-                    'url' => array('/fueling/reportGrid/gridAzsCustomer'),
-                    'visible' => Yii::app()->user->checkAccess('Periods'),
-                ),
-                array(
-                    'label' => Yii::t('dbr_app', 'Actual period by company'),
-                    'url' => array('/fueling/reportGrid/gridAzsCustomer2'),
-                    'visible' => Yii::app()->user->checkAccess('Periods'),
-                ),
-                array(
-                    'label' => Yii::t('dbr_app', 'Actual period by station'),
-                    'url' => array('/fueling/reportGrid/gridAzsActual'),
-                    'visible' => Yii::app()->user->checkAccess('Periods'),
-                ),
-                array(
-                    'label' => Yii::t('dbr_app', 'Daily report by customers'),
-                    'url' => array('/fueling/reportGrid/reportCustomers&type=daily'),
-                    'visible' => Yii::app()->user->checkAccess('Periods'),
-                ),
-                array(
-                    'label' => Yii::t('dbr_app', 'Monthly report by customers'),
-                    'url' => array('/fueling/reportGrid/reportCustomers&type=monthly'),
-                    'visible' => Yii::app()->user->checkAccess('Periods'),
-                ),
+
             )
         ),
     ),

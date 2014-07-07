@@ -38,6 +38,7 @@ return array (
   'Office' => 'Birojs',
   'Payments' => 'Maksājumi',
   'Periods' => 'Periodi',
+  'Exp.Positons' => 'Izd.Pozīcijas',
   'Refueling' => 'Uzpildīšana',
   'Reports' => 'Atskaites',
   'Weekly report' => 'Nedēļu atskaites',
