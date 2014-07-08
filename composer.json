@@ -18,8 +18,6 @@
         "dbrisinajumi/d2person": "dev-master",
         "dbrisinajumi/trucks": "dev-master",        
         "dbrisinajumi/d2finv": "dev-master",
-        "dbrisinajumi/d2fixr": "dev-master",
-        "uldisn/vvoy": "dev-master"
-
+        "dbrisinajumi/d2fixr": "dev-master"
      }    
 }
