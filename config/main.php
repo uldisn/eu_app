@@ -133,6 +133,9 @@ $mainConfig = array(
         'vendor.uldisn.hill.models.*'
     ),
     'modules'    => array(
+        'wiki' => array(
+            'class' => 'vendor.dbrisinajumi.wiki.WikiModule',
+        ),
         'hill' => array( //++
             'class' => 'vendor.uldisn.hill.HillModule',
         ),
@@ -361,6 +364,9 @@ $mainConfig = array(
     ),
     // application components
     'components' => array(
+        'cache' => array(
+            'class' => 'CFileCache',
+        ),
         'events' => array(
           'class'  => 'vendor.bwoester.yii-static-events-component.EventRegistry',
           'attach' => array(
@@ -506,8 +512,8 @@ $mainConfig = array(
         ),
         'currency'      => array(
             'class'     => 'vendor.dbrisinajumi.fcrn.components.FcrnRate',
-            'base'      => FCRN_LTL,
-            'source'    => FCSR_LB_LT,
+            'base'      => 1,  //EUR
+            'source'    => 1, //bank.lv
         ),
         'log'           => array(
             'class'  => 'CLogRouter',

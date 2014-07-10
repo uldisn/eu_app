@@ -65,6 +65,7 @@ $consoleConfig = array(
 				'vvoy'                    => 'vendor.uldisn.vvoy.migrations',
 				'trucks'                  => 'vendor.dbrisinajumi.trucks.migrations',
                 'd2fixr'                  => 'vendor.dbrisinajumi.d2fixr.migrations',
+                'wiki'                    => 'vendor.dbrisinajumi.wiki.migrations',
             ),
             // you can customize the modules migrations subdirectory which is used when you are using yii module config
             'migrationSubPath'      => 'migrations',
