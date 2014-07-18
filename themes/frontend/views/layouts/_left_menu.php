@@ -76,6 +76,11 @@ $this->widget('vendor.uldisn.ace.widgets.TbAceMenu', array(
                     'url' => array('/trucks/vtroTruckOdometer'),
                     'visible' => Yii::app()->user->checkAccess(ROLE_FINANCES),
                 ),
+                array(
+                    'label' => Yii::t('dbr_app', 'Wiki'),
+                    'url' => array('/wiki'),
+                    'visible' => Yii::app()->user->checkAccess(ROLE_FINANCES),
+                ),
             )
         ),
         array(

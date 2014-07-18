@@ -134,7 +134,7 @@ $mainConfig = array(
     ),
     'modules'    => array(
         'wiki' => array(
-            'class' => 'vendor.dbrisinajumi.wiki.WikiModule',
+            'class' => 'vendor.dbrisinajumi.yeeki.WikiModule',
         ),
         'hill' => array( //++
             'class' => 'vendor.uldisn.hill.HillModule',
