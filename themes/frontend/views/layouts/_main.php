@@ -5,10 +5,11 @@
     <![endif]-->
 
     <?php
+    
     $cs = Yii::app()->getClientScript();
     $cs->registerMetaTag('width=device-width, initial-scale=1.0', 'viewport');
 
-    $ace_path = realpath(Yii::getPathOfAlias('vendor.responsiweb') . '/ace-v1.2--bs-v2.3.x/assets');
+    $ace_path = Yii::app()->params['ace_assets'];
     $ace_path_add = realpath(Yii::getPathOfAlias('vendor.uldisn.ace') . '/assets');
 
     $asset_link = Yii::app()->assetManager->publish(
@@ -33,11 +34,16 @@
     //$cs->registerCssFile($app_asset_path . '/parkoil-ace.css');    
     $cs->registerCssFile($app_asset_path . '/parkoil.css');    
 
-    // JS files    
+    //jquery-ui aizvietoju ar ace jquery-ui
+    Yii::app()->clientScript->scriptMap=array(
+        'jquery-ui.min.js'=>$asset_link . '/js/jquery-ui-1.10.3.full.min.js',
+    );    
+    
     $cs->registerScriptFile($asset_link . '/js/ace-extra.min.js');
     $cs->registerScriptFile($asset_link . '/js/ace-elements.min.js',CClientScript::POS_END);
     $cs->registerScriptFile($asset_link . '/js/ace.min.js',CClientScript::POS_END);
     //$cs->registerScriptFile($asset_link . '/js/uncompressed/ace.js',CClientScript::POS_END);
+
 
     $user = User::model()->findByPk(Yii::app()->user->id);    
     ?>
@@ -223,7 +229,7 @@ $this->widget(
 
 <?php
 
-if (Yii::app()->user->checkAccess('Editor')) {
+if (Yii::app()->user->checkAccess('Editor') && FALSE) {
     ?>
 <div id="backend">
     <?php

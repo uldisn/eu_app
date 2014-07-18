@@ -700,6 +700,7 @@ $mainConfig = array(
         'AuditTrail' => array(
             'table' =>'s_audit_trail',
         ),
+        'ace_assets' => realpath($applicationDirectory . '/../../../vendor/responsiweb/ace-v1.2--bs-v2.3.x/assets'),
     ),
 );
 

@@ -84,27 +84,32 @@ $this->widget('vendor.uldisn.ace.widgets.TbAceMenu', array(
             'icon' => 'road',
             'items' => array(
                 array(
-                    'label' => Yii::t('dbr_app', 'Dashboard'),
+                    'label' => Yii::t('VvoyModule.model', 'Vvoy Dasboard'),
                     'url' => array('/vvoy/dashboard'),
                     'visible' => Yii::app()->user->checkAccess(ROLE_FINANCES),
                 ),
                 array(
-                    'label' => Yii::t('dbr_app', 'Voyages'),
+                    'label' => Yii::t('VvoyModule.model', 'Voyage plan'),
                     'url' => array('/vvoy/vvoyVoyage'),
                     'visible' => Yii::app()->user->checkAccess(ROLE_FINANCES),
                 ),
                 array(
-                    'label' => Yii::t('dbr_app', 'Points'),
+                    'label' => Yii::t('VvoyModule.model', 'Voyages expenses'),
+                    'url' => array('/vvoy/vvoyVoyageExp'),
+                    'visible' => Yii::app()->user->checkAccess(ROLE_FINANCES),
+                ),
+                array(
+                    'label' => Yii::t('VvoyModule.model', 'Vpnt Points'),
                     'url' => array('/vvoy/vpntPoint'),
                     'visible' => Yii::app()->user->checkAccess(ROLE_FINANCES),
                 ),
                 array(
-                    'label' => Yii::t('dbr_app', 'Expense positions'),
+                    'label' => Yii::t('VvoyModule.model', 'Vepo Expenses Positions'),
                     'url' => array('/vvoy/vepoExpensesPositions'),
                     'visible' => Yii::app()->user->checkAccess(ROLE_FINANCES),
                 ),
                 array(
-                    'label' => Yii::t('dbr_app', 'Contracts'),
+                    'label' => Yii::t('VvoyModule.model', 'Vcnt Contracts'),
                     'url' => array('/vvoy/vcntContract'),
                     'visible' => Yii::app()->user->checkAccess(ROLE_FINANCES),
                 ),
