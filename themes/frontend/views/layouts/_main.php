@@ -33,11 +33,11 @@
     $cs->registerCssFile($asset_link_ace_add . '/css/d2-ace.css');
     //$cs->registerCssFile($app_asset_path . '/parkoil-ace.css');    
     $cs->registerCssFile($app_asset_path . '/parkoil.css');    
-
-    //jquery-ui aizvietoju ar ace jquery-ui
-    Yii::app()->clientScript->scriptMap=array(
-        'jquery-ui.min.js'=>$asset_link . '/js/jquery-ui-1.10.3.full.min.js',
-    );    
+    
+    // remove default jquery ui
+    Yii::app()->clientScript->scriptMap['jquery-ui.min.js'] = false;
+    // add ace version
+    $cs->registerScriptFile($asset_link . '/js/jquery-ui-1.10.4.custom.min.js');
     
     $cs->registerScriptFile($asset_link . '/js/ace-extra.min.js');
     $cs->registerScriptFile($asset_link . '/js/ace-elements.min.js',CClientScript::POS_END);
