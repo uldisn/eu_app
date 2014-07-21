@@ -247,8 +247,8 @@ if (Yii::app()->user->checkAccess('Editor') && FALSE) {
 // help
 if ($this->module != null && $this->module->id != 'wiki') {
     $wikiTitle = CHtml::encode($this->wikiTitle);
-    $wikiUid   = $this->module->id . '/' . $this->id . '/' . $this->action->id;
-    $wikiUrl   = Yii::app()->createUrl('wiki', array('uid' => $wikiUid));
+    $wikiUid   = $this->module->id . '/' . $this->id . '/' . $this->action->id . '/' . Yii::app()->language;
+    $wikiUrl   = Yii::app()->createUrl('wiki/default/view', array('uid' => $wikiUid));
     ?>
 <div class="ace-settings-container ace-help-container" id="onpage-help">
     <div class="btn btn-app btn-xs btn-info ace-settings-btn ace-toggle-onpage-help" id="ace-toggle-onpage-help">
