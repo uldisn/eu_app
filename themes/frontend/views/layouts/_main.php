@@ -241,3 +241,27 @@ if (Yii::app()->user->checkAccess('Editor') && FALSE) {
 </div>
     <?php
 }
+?>
+
+<?php
+// help
+if ($this->module->id != 'wiki') {
+    $wikiTitle = CHtml::encode($this->wikiTitle);
+    $wikiUid   = $this->module->id . '/' . $this->id . '/' . $this->action->id;
+    $wikiUrl   = Yii::app()->createUrl('wiki', array('uid' => $wikiUid));
+    ?>
+<div class="ace-settings-container ace-help-container" id="onpage-help">
+    <div class="btn btn-app btn-xs btn-info ace-settings-btn ace-toggle-onpage-help" id="ace-toggle-onpage-help">
+        <i class="ace-toggle-help-text ace-icon fa fa-question bigger-150"></i>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $('#onpage-help').on('click', function(){
+        var title = '<?php echo $wikiTitle; ?>';
+        var uid = '<?php echo $wikiUid; ?>';
+        window.location = '<?php echo $wikiUrl; ?>';
+    });
+</script>
+    <?php
+}
