@@ -245,7 +245,7 @@ if (Yii::app()->user->checkAccess('Editor') && FALSE) {
 
 <?php
 // help
-if ($this->module->id != 'wiki') {
+if ($this->module != null && $this->module->id != 'wiki') {
     $wikiTitle = CHtml::encode($this->wikiTitle);
     $wikiUid   = $this->module->id . '/' . $this->id . '/' . $this->action->id;
     $wikiUrl   = Yii::app()->createUrl('wiki', array('uid' => $wikiUid));
