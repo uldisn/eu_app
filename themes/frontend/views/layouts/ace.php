@@ -1,7 +1,11 @@
 <?php $this->beginContent('//layouts/main'); ?>
 <div class="page-header position-relative">
     <h1>
-        <?php echo $this->contentHeader;?>
+        <?php
+        if (!empty($this->contentHeader)) {
+            echo $this->contentHeader;
+        }
+        ?>
     </h1>
 </div>
 <div class="row-fluid">
