@@ -78,7 +78,7 @@ $this->widget('vendor.uldisn.ace.widgets.TbAceMenu', array(
                 ),
                 array(
                     'label' => Yii::t('dbr_app', 'Wiki'),
-                    'url' => array('/wiki'),
+                    'url' => array('/wiki/default/pageIndex'),
                     'visible' => Yii::app()->user->checkAccess(ROLE_FINANCES),
                 ),
             )
