@@ -37,7 +37,7 @@
     // remove default jquery ui
     Yii::app()->clientScript->scriptMap['jquery-ui.min.js'] = false;
     // add ace version
-    $cs->registerScriptFile($asset_link . '/js/jquery-ui-1.10.4.custom.min.js');
+    $cs->registerScriptFile($asset_link_ace_add . '/js/jquery-ui-1.10.4.custom.min.js');
     
     $cs->registerScriptFile($asset_link . '/js/ace-extra.min.js');
     $cs->registerScriptFile($asset_link . '/js/ace-elements.min.js',CClientScript::POS_END);
