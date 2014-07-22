@@ -21,31 +21,8 @@ class Controller extends CController
 	 */
 	public $breadcrumbs=array();
     
-    private $_wikiTitle;
-
     function init(){
         parent::init();
         Yii::app()->homeUrl = $this->createUrl('/');
     }
-    
-    /**
-	 * @return string the wiki title. Defaults to the page title.
-	 */
-	public function getWikiTitle()
-	{
-		if($this->_wikiTitle!==null)
-			return $this->_wikiTitle;
-		else
-		{
-			return $this->getPageTitle();
 		}
-	}
-
-	/**
-	 * @param string $value the wiki title.
-	 */
-	public function setWikiTitle($value)
-	{
-		$this->_wikiTitle=$value;
-	}
-}
