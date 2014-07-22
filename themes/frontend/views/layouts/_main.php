@@ -244,11 +244,29 @@ if (Yii::app()->user->checkAccess('Editor') && FALSE) {
 ?>
 
 <?php
+
 // help
 if ($this->module != null && $this->module->id != 'wiki') {
+    
     $wikiTitle = CHtml::encode($this->wikiTitle);
     $wikiUid   = $this->module->id . '/' . $this->id . '/' . $this->action->id . '/' . Yii::app()->language;
-    $wikiUrl   = Yii::app()->createUrl('wiki/default/view', array('uid' => $wikiUid));
+    $wikiUrl   = Yii::app()->createUrl('wiki/default/viewPopup', array('uid' => $wikiUid));
+    
+    
+    $this->beginWidget('vendor.uldisn.ace.widgets.CJuiAceDialog',array(
+        'id'=>'helpdialog',
+        'title' => $wikiTitle,
+        'title_icon' => 'icon-question-sign blue',
+        'options'=>array(
+            'resizable' => true,
+            'width'=>'auto',
+            'height'=>'auto',        
+            'modal' => true,
+            'autoOpen'=>false,
+        ),
+    ));
+    
+    $this->endWidget('vendor.uldisn.ace.widgets.CJuiAceDialog');
     ?>
 <div class="ace-settings-container ace-help-container" id="onpage-help">
     <div class="btn btn-app btn-xs btn-info ace-settings-btn ace-toggle-onpage-help" id="ace-toggle-onpage-help">
@@ -258,9 +276,8 @@ if ($this->module != null && $this->module->id != 'wiki') {
 
 <script type="text/javascript">
     $('#onpage-help').on('click', function(){
-        var title = '<?php echo $wikiTitle; ?>';
-        var uid = '<?php echo $wikiUid; ?>';
-        window.location = '<?php echo $wikiUrl; ?>';
+        var url = '<?php echo $wikiUrl; ?>';
+        $("#helpdialog").data("opener", this).load(url).dialog("open");
     });
 </script>
     <?php
