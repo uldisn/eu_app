@@ -248,14 +248,11 @@ if (Yii::app()->user->checkAccess('Editor') && FALSE) {
 // help
 if ($this->module != null && $this->module->id != 'wiki') {
     
-    $wikiTitle = CHtml::encode($this->wikiTitle);
-    $wikiUid   = $this->module->id . '/' . $this->id . '/' . $this->action->id . '/' . Yii::app()->language;
-    $wikiUrl   = Yii::app()->createUrl('wiki/default/viewPopup', array('uid' => $wikiUid));
-    
+    $wikiUid = $this->module->id . '/' . $this->id . '/' . $this->action->id . '/' . Yii::app()->language;
+    $wikiUrl = Yii::app()->createUrl('wiki/default/viewPopup', array('uid' => $wikiUid));
     
     $this->beginWidget('vendor.uldisn.ace.widgets.CJuiAceDialog',array(
         'id'=>'helpdialog',
-        'title' => $wikiTitle,
         'title_icon' => 'icon-question-sign blue',
         'options'=>array(
             'resizable' => true,
@@ -277,7 +274,14 @@ if ($this->module != null && $this->module->id != 'wiki') {
 <script type="text/javascript">
     $('#onpage-help').on('click', function(){
         var url = '<?php echo $wikiUrl; ?>';
-        $("#helpdialog").data("opener", this).load(url).dialog("open");
+        $("#helpdialog").data("opener", this).load(url, function() {
+            var title = '';
+            $(this).children('title').each(function() {
+                title = $(this).html();
+            });
+            $(this).find('title').remove();
+            $(this).dialog('option', 'title', title);
+        }).dialog("open");
     });
 </script>
     <?php
