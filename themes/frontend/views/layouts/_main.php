@@ -253,7 +253,6 @@ if ($this->module != null && $this->module->id != 'wiki') {
     
     $this->beginWidget('vendor.uldisn.ace.widgets.CJuiAceDialog',array(
         'id'=>'helpdialog',
-        'title_icon' => 'icon-question-sign blue',
         'options'=>array(
             'resizable' => true,
             'width'=>'auto',
@@ -275,11 +274,12 @@ if ($this->module != null && $this->module->id != 'wiki') {
     $('#onpage-help').on('click', function(){
         var url = '<?php echo $wikiUrl; ?>';
         $("#helpdialog").data("opener", this).load(url, function() {
-            var title = '';
+            var ttext = '';
             $(this).children('title').each(function() {
-                title = $(this).html();
+                ttext = $(this).html();
             });
             $(this).find('title').remove();
+            var title = '<div class="widget-header"><h4 class="smaller"><i class="icon-question-sign blue"></i>' + ttext + '</h4></div>';
             $(this).dialog('option', 'title', title);
         }).dialog("open");
     });
