@@ -185,7 +185,7 @@ $mainConfig = array(
         ),
         'd1files' => array(
              'class' => 'vendor.dbrisinajumi.d1files.D1filesModule',
-             'upload_dir' => 'root.parkoil_upload',
+             'upload_dir' => 'root.eu_upload',
              'accept_file_types' => '/\.(gif|pdf|dat|jpe?g|png|doc|docx|xls|xlsx)$/i',
          ),          
         // backend for ckeditor styles and templates
