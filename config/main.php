@@ -114,6 +114,8 @@ $mainConfig = array(
 		'vendor.uldisn.yii-user.components.*',
 		'vendor.dbrisinajumi.yii-jqplot.*',
         'vendor.dbrisinajumi.d1files.models.*',        
+        'vendor.dbrisinajumi.d2files.models.*',        
+        'vendor.dbrisinajumi.d2files.widgets.*', // shared classes
         'vendor.cornernote.yii-email-module.email.models.*',
         'vendor.cornernote.yii-email-module.email.components.*',
         'vendor.dbrisinajumi.person.models.*',        
@@ -187,7 +189,12 @@ $mainConfig = array(
              'class' => 'vendor.dbrisinajumi.d1files.D1filesModule',
              'upload_dir' => 'root.eu_upload',
              'accept_file_types' => '/\.(gif|pdf|dat|jpe?g|png|doc|docx|xls|xlsx)$/i',
-         ),          
+        ),          
+        'd2files' => array(
+             'class' => 'vendor.dbrisinajumi.d2files.D2filesModule',
+             'upload_dir' => 'root.upload.d2files_' . basename(dirname($applicationDirectory)) . '_' . basename($applicationDirectory),
+             'accept_file_types' => '/\.(gif|pdf|dat|jpe?g|png|doc|docx|xls|xlsx|htm)$/i',
+        ),
         // backend for ckeditor styles and templates
 //        'person' => array(
 //            'class' => 'vendor.dbrisinajumi.person.PersonModule',
