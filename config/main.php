@@ -132,15 +132,17 @@ $mainConfig = array(
         'vendor.dbrisinajumi.d2fixr.models.*',                
         'vendor.uldisn.vvoy.*',                
         'vendor.uldisn.vvoy.models.*',                
-        'vendor.uldisn.hill.models.*'
+        'vendor.uldisn.d2files.*',                
+        'vendor.uldisn.d2files.models.*',                
+
     ),
     'modules'    => array(
         'wiki' => array(
             'class' => 'vendor.dbrisinajumi.yeeki.WikiModule',
         ),
-        'hill' => array( //++
-            'class' => 'vendor.uldisn.hill.HillModule',
-        ),
+//        'hill' => array( //++
+//            'class' => 'vendor.uldisn.hill.HillModule',
+//        ),
         'vvoy' => array( //++
             'class' => 'vendor.uldisn.vvoy.VvoyModule',
             'defaultController' => 'vvoyVoyage',

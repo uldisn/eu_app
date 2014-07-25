@@ -67,6 +67,7 @@ $consoleConfig = array(
                 'd2fixr'                  => 'vendor.dbrisinajumi.d2fixr.migrations',
                 'yeeki'                   => 'vendor.dbrisinajumi.yeeki.migrations',
                 'd2files'                 => 'vendor.dbrisinajumi.d2files.migrations',
+                'd2person'                 => 'vendor.dbrisinajumi.d2person.migrations',
             ),
             // you can customize the modules migrations subdirectory which is used when you are using yii module config
             'migrationSubPath'      => 'migrations',

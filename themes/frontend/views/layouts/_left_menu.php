@@ -30,6 +30,21 @@ $this->widget('vendor.uldisn.ace.widgets.TbAceMenu', array(
                     'visible' => Yii::app()->user->checkAccess(ROLE_FINANCES),
                 ),
                 array(
+                    'label' => Yii::t('D2personModule.model', 'Persons Document Types'),
+                    'url' => array('/d2person/pdcmDocumentType'),
+                    'visible' => Yii::app()->user->checkAccess(ROLE_FINANCES),
+                ),
+                array(
+                    'label' => Yii::t('D2personModule.model', 'Person Types'),
+                    'url' => array('/d2person/ptypType'),
+                    'visible' => Yii::app()->user->checkAccess(ROLE_FINANCES),
+                ),
+                array(
+                    'label' => Yii::t('D2personModule.model', 'Contact Types'),
+                    'url' => array('/d2person/pcntContactType'),
+                    'visible' => Yii::app()->user->checkAccess(ROLE_FINANCES),
+                ),
+                array(
                     'label' => Yii::t('dbr_app', 'Users'),
                     'url' => array('/user/admin'),
                     'visible' => Yii::app()->user->checkAccess('UserAdmin'),
