@@ -42,7 +42,7 @@ return array (
   'This is a "static" page. You may change the content of this page by updating the file' => '',
   'Verification Code' => 'Validācijas kods',
   'Widgets' => '',
-  'Your companies' => 'Yūsu uzņemums',
+  'Your companies' => 'Jūsu uzņemums',
   'About' => 'Par',
   'Append Child Page' => 'Pievienot apakšlapu',
   'Append Sibling Page' => 'Pievienot māsas lapu ',
