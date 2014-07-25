@@ -146,6 +146,11 @@ $mainConfig = array(
         'vvoy' => array( //++
             'class' => 'vendor.uldisn.vvoy.VvoyModule',
             'defaultController' => 'vvoyVoyage',
+            'driver_person_type' => 1,   // autovadītājs
+            'driver_payment_docs' => array(
+                                        3, //degvielas karte
+                                        4, // Avans norekini
+                                    )
         ),
         'trucks' => array( //++
             'class' => 'vendor.dbrisinajumi.trucks.TrucksModule',
