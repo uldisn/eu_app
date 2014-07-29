@@ -13,6 +13,7 @@ define('FVAT_NONE', 1);
 define('FPRC_DYZ002', 1);
 
 define('FCRN_LTL', 12);
+define('FCRN_EUR', 1);
 define('FCRN_RUB', 10);
 
 define('FCSR_LB_LT', 2);
@@ -150,7 +151,8 @@ $mainConfig = array(
             'driver_payment_docs' => array(
                                         3, //degvielas karte
                                         4, // Avans norekini
-                                    )
+            'vepo_postion_eur_km' => 6,                        ),
+            'person_seting_eur_km' => 1,
         ),
         'trucks' => array( //++
             'class' => 'vendor.dbrisinajumi.trucks.TrucksModule',
