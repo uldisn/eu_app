@@ -227,24 +227,24 @@ $mainConfig = array(
         'ckeditorConfigurator' => array(
             'class' => 'vendor.schmunk42.ckeditor-configurator.CkeditorConfiguratorModule',
         ),
-        'p3admin'              => array(
-            'class'  => 'vendor.phundament.p3admin.P3AdminModule',
-            'params' => array('install' => false),
-        ),
-        'p3widgets'            => array(
-            'class'  => 'vendor.phundament.p3widgets.P3WidgetsModule',
-            'params' => array(
-                'widgets' => array(
-                    'CWidget'           => 'Basic HTML Widget',
-                    'TbCarousel'        => 'Bootstrap Carousel',
-                    'EFancyboxWidget'   => 'Fancy Box',
-                    'P3ReferenceWidget' => 'Widget Copy'
-                    // use eg. $> php composer.phar require yiiext/swf-object-widget to get the
-                    // widget source; import widget class or set an alias.
-                    #'ESwfObjectWidget' => 'SWF Object',
-                ),
-            ),
-        ),
+//        'p3admin'              => array(
+//            'class'  => 'vendor.phundament.p3admin.P3AdminModule',
+//            'params' => array('install' => false),
+//        ),
+//        'p3widgets'            => array(
+//            'class'  => 'vendor.phundament.p3widgets.P3WidgetsModule',
+//            'params' => array(
+//                'widgets' => array(
+//                    'CWidget'           => 'Basic HTML Widget',
+//                    'TbCarousel'        => 'Bootstrap Carousel',
+//                    'EFancyboxWidget'   => 'Fancy Box',
+//                    'P3ReferenceWidget' => 'Widget Copy'
+//                    // use eg. $> php composer.phar require yiiext/swf-object-widget to get the
+//                    // widget source; import widget class or set an alias.
+//                    #'ESwfObjectWidget' => 'SWF Object',
+//                ),
+//            ),
+//        ),
         /*
         'p3media'              => array(
             'class'  => 'vendor.phundament.p3media.P3MediaModule',
@@ -333,18 +333,18 @@ $mainConfig = array(
         ),
          *
          */
-        'p3pages'              => array(
-            'class'  => 'vendor.phundament.p3pages.P3PagesModule',
-            'params' => array(
-                'availableLayouts' => array(
-                    '//layouts/main' => 'Main Layout',
-                ),
-                'availableViews'   => array(
-                    '//p3pages/column1' => 'One Column',
-                    '//p3pages/column2' => 'Two Columns',
-                )
-            ),
-        ),
+//        'p3pages'              => array(
+//            'class'  => 'vendor.phundament.p3pages.P3PagesModule',
+//            'params' => array(
+//                'availableLayouts' => array(
+//                    '//layouts/main' => 'Main Layout',
+//                ),
+//                'availableViews'   => array(
+//                    '//p3pages/column1' => 'One Column',
+//                    '//p3pages/column2' => 'Two Columns',
+//                )
+//            ),
+//        ),
         'rights'               => array(
             'class'        => 'vendor.crisu83.yii-rights.RightsModule',
             'appLayout'    => '//layouts/main',
