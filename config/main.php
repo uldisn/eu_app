@@ -614,7 +614,7 @@ $mainConfig = array(
             'enableSkin' => true,
             'widgets'=>array(
                 'tlbExcelView' => array(
-                    'libPath' => 'vendor.codeplex.phpexcel.Classes.PHPExcel',
+                    'libPath' => 'vendor.phpoffice.phpexcel.Classes.PHPExcel',
                     'decimalSeparator' => '.',
                     'rowHeight' => 20,
                 ),
