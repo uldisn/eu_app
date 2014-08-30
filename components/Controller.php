@@ -25,4 +25,13 @@ class Controller extends CController
         parent::init();
         Yii::app()->homeUrl = $this->createUrl('/');
     }
-		}
+    
+    protected function renderJSON($data)
+    {
+        header('Content-type: application/json');
+        echo CJSON::encode($data);
+        Yii::app()->end();
+    }    
+		
+    
+}
