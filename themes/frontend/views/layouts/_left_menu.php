@@ -163,8 +163,8 @@ $this->widget('vendor.uldisn.ace.widgets.TbAceMenu', array(
             'visible' => Yii::app()->user->checkAccess('Reports'),
             'items' => array(
                 array(
-                    'label' => Yii::t('dbr_app', 'Weekly report'),
-                    'url' => array(''),
+                    'label' => Yii::t('dbr_app', 'Dimensions'),
+                    'url' => array('/d2fixr/Report'),
                     'visible' => Yii::app()->user->checkAccess('Reports'),
                 ),
 
