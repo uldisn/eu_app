@@ -9,6 +9,19 @@ $this->widget('vendor.uldisn.ace.widgets.TbAceMenu', array(
     'htmlOptions' => array('class' => 'nav-list'),
     'items' => array(
         array(
+            'label' => Yii::t('dbr_app', 'System'),
+            'icon' => 'icon-cogs',            
+            'visible' => Yii::app()->user->checkAccess('Administrator'),
+            'submenuOptions' => array('class' => 'multi-level'),
+            'items' => array(
+                array(
+                    'label' => Yii::t('dbr_app', 'Access managment'),
+                    'url' => array('/rights'),
+                    'visible' => Yii::app()->user->checkAccess('Administrator'),
+                ),
+            ),
+        ),
+        array(
             'label' => Yii::t('dbr_app', 'Administration'),
             'icon' => 'icon-cogs',            
             'visible' => Yii::app()->user->checkAccess('Company.*'),

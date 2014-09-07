@@ -344,7 +344,7 @@ $mainConfig = array(
 //        ),
         'rights'               => array(
             'class'        => 'vendor.crisu83.yii-rights.RightsModule',
-            'appLayout'    => '//layouts/main',
+            'appLayout'    => '//layouts/_main',
             'userIdColumn' => 'id',
             'userClass'    => 'User',
             'cssFile'      => '/themes/backend/css/yii-rights.css'
@@ -527,20 +527,6 @@ $mainConfig = array(
             'class'     => 'vendor.dbrisinajumi.fcrn.components.FcrnRate',
             'base'      => 1,  //EUR
             'source'    => 1, //bank.lv
-        ),
-        'log'           => array(
-            'class'  => 'CLogRouter',
-            'enabled' => false,
-            'routes' => array(
-                array(
-                    'class'  => 'CFileLogRoute',
-                    'levels' => 'error, warning',
-                ),
-                array(
-            'class'=>'vendor.malyshev.yii-debug-toolbar.yii-debug-toolbar.YiiDebugToolbarRoute',
-            'ipFilters'=>array('127.0.0.1','192.168.1.215'),
-        ),
-            ),
         ),
         'themeManager'  => array(
             'class'    => 'vendor.schmunk42.multi-theme.EMultiThemeManager',
