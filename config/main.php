@@ -608,10 +608,58 @@ $mainConfig = array(
                     //ACE
                     'separator' => '<i class="icon-angle-right arrow-icon"></i>',  
                 ),
+                
+                // reset all JUI widgets style
+                'CJuiAccordion'=> array(
+                    'cssFile'=>false,
+                ),
+                 'CJuiAutoComplete' => array(
+                    'cssFile'=>false,
+                ),
+                 'CJuiButton'=> array(
+                    'cssFile'=>false,
+                ),
+                 'CJuiDatePicker'=> array(
+                    'cssFile'=>false,
+                ),
+                 'CJuiDialog'=> array(
+                    'cssFile'=>false,
+                ),
+                 'CJuiDraggable'=> array(
+                    'cssFile'=>false,
+                ),
+                 'CJuiDroppable'=> array(
+                    'cssFile'=>false,
+                ),
+                 'CJuiInputWidget'=> array(
+                    'cssFile'=>false,
+                ),
+                 'CJuiProgressBar'=> array(
+                    'cssFile'=>false,
+                ),
+                 'CJuiResizable'=> array(
+                    'cssFile'=>false,
+                ),
+                 'CJuiSelectable'=> array(
+                    'cssFile'=>false,
+                ),
+                 'CJuiSlider'=> array(
+                    'cssFile'=>false,
+                ),
+                 'CJuiSliderInput'=> array(
+                    'cssFile'=>false,
+                ),
+                 'CJuiSortable'=> array(
+                    'cssFile'=>false,
+                ),
+                 'CJuiTabs'=> array(
+                    'cssFile'=>false,
+                ),
+                
             ),
         ),
         'request'=>array('enableCsrfValidation'=>false),
-
+        
     ),
     // application-level parameters that can be accessed
     // using Yii::app()->params['paramName']
