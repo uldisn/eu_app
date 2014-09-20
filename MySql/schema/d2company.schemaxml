@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemadesigner version="6.5">
+<source>
+<database charset="latin1" collation="latin1_swedish_ci">p3_02</database>
+</source>
+<canvas zoom="100">
+<tables>
+<table name="ccmp_company" view="colnames">
+<left>540</left>
+<top>127</top>
+<width>192</width>
+<height>206</height>
+<sql_create_table>CREATE TABLE `ccmp_company` (
+  `ccmp_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `ccmp_name` varchar(200) NOT NULL,
+  `ccmp_ccnt_id` smallint(6) unsigned DEFAULT NULL COMMENT 'contry',
+  `ccmp_registrtion_no` varchar(20) DEFAULT NULL,
+  `ccmp_vat_registrtion_no` varchar(20) DEFAULT NULL,
+  `ccmp_registration_address` varchar(200) DEFAULT NULL,
+  `ccmp_official_address` varchar(200) DEFAULT NULL,
+  `ccmp_statuss` enum('ACTIVE','CLOSED') DEFAULT 'ACTIVE',
+  `ccmp_description` text,
+  PRIMARY KEY (`ccmp_id`),
+  KEY `ccmp_ccnt_id` (`ccmp_ccnt_id`),
+  KEY `ccmp_name` (`ccmp_name`(4)),
+  CONSTRAINT `ccmp_company_ibfk_1` FOREIGN KEY (`ccmp_ccnt_id`) REFERENCES `ccnt_country` (`ccnt_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+<table name="ccnt_country" view="colnames">
+<left>827</left>
+<top>142</top>
+<width>100</width>
+<height>110</height>
+<sql_create_table>CREATE TABLE `ccnt_country` (
+  `ccnt_id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `ccnt_name` varchar(200) NOT NULL,
+  `ccnt_code` char(3) CHARACTER SET ascii DEFAULT NULL,
+  PRIMARY KEY (`ccnt_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+<table name="ccxg_company_x_group" view="colnames">
+<left>341</left>
+<top>82</top>
+<width>118</width>
+<height>110</height>
+<sql_create_table>CREATE TABLE `ccxg_company_x_group` (
+  `ccxg_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `ccxg_ccmp_id` int(10) unsigned NOT NULL,
+  `ccxg_ccgr_id` tinyint(3) unsigned NOT NULL,
+  PRIMARY KEY (`ccxg_id`),
+  KEY `ccxg_ccmp_id` (`ccxg_ccmp_id`),
+  KEY `ccxg_ccgr_id` (`ccxg_ccgr_id`),
+  CONSTRAINT `ccxg_company_x_group_ibfk_1` FOREIGN KEY (`ccxg_ccmp_id`) REFERENCES `ccmp_company` (`ccmp_id`),
+  CONSTRAINT `ccxg_company_x_group_ibfk_2` FOREIGN KEY (`ccxg_ccgr_id`) REFERENCES `ccgr_group` (`ccgr_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+<table name="ccgr_group" view="colnames">
+<left>184</left>
+<top>115</top>
+<width>101</width>
+<height>126</height>
+<sql_create_table>CREATE TABLE `ccgr_group` (
+  `ccgr_id` tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
+  `ccgr_name` varchar(20) NOT NULL,
+  `ccgr_notes` text,
+  `ccgr_hide` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`ccgr_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+<table name="ccbr_branch" view="colnames">
+<left>339</left>
+<top>219</top>
+<width>116</width>
+<height>158</height>
+<sql_create_table>CREATE TABLE `ccbr_branch` (
+  `ccbr_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `ccbr_ccmp_id` int(10) unsigned NOT NULL,
+  `ccbr_name` varchar(350) NOT NULL,
+  `ccrb_code` varchar(50) DEFAULT NULL,
+  `ccbr_notes` text,
+  `ccbr_hide` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`ccbr_id`),
+  KEY `ccbr_ccmp_id` (`ccbr_ccmp_id`),
+  CONSTRAINT `ccbr_branch_ibfk_1` FOREIGN KEY (`ccbr_ccmp_id`) REFERENCES `ccmp_company` (`ccmp_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+</tables>
+</canvas>
+</schemadesigner>
