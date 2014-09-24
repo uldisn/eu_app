@@ -60,8 +60,8 @@ $mainConfig = array(
         'bootstrap'                            => 'vendor.clevertech.yiibooster.src',
         'editable'                             => 'vendor.vitalets.x-editable-yii',
         // p3widgets
-        'jsonEditorView'                       => 'vendor.phundament.p3extensions.widgets.jsonEditorView',
-        'ckeditor'                             => 'vendor.phundament.p3extensions.widgets.ckeditor',
+        //'jsonEditorView'                       => 'vendor.phundament.p3extensions.widgets.jsonEditorView',
+        //'ckeditor'                             => 'vendor.phundament.p3extensions.widgets.ckeditor',
         // p3media
         'jquery-file-upload'                   => 'vendor.phundament.jquery-file-upload',
         'jquery-file-upload-widget'            => 'vendor.phundament.p3extensions.widgets.jquery-file-upload',
@@ -81,16 +81,6 @@ $mainConfig = array(
         'application.models.*',
         'application.components.*',
         'zii.widgets.*',
-        // TODO: should be handled by composer autoloader
-        //'vendor.phundament.p3widgets.components.*', // P3WidgetContainer, P3Reference Widget
-        //'vendor.phundament.p3extensions.components.*', // shared classes
-        //'vendor.phundament.p3extensions.behaviors.*', // shared classes
-        //'vendor.phundament.p3extensions.widgets.*', // shared classes
-        //'vendor.phundament.p3extensions.helpers.*', // shared classes - P3StringHelper
-        //'vendor.phundament.p3extensions.validators.*', // shared classes - P3StringHelper
-        //'vendor.phundament.p3pages.models.*', // Meta description and keywords (P3Media)
-        // imports for components from packages, which do not support composer autoloading
-        //'vendor.dbrisinajumi.yii-user.models.*', // User Model
         'vendor.crisu83.yii-rights.components.*', // RWebUser
         'vendor.yiiext.fancybox-widget.*', // Fancybox Widget
         'vendor.clevertech.yiibooster.src.widgets.*', //
@@ -201,10 +191,7 @@ $mainConfig = array(
              'upload_dir' => 'root.upload.d2files_' . basename(dirname($applicationDirectory)) . '_' . basename($applicationDirectory),
              'accept_file_types' => '/\.(gif|pdf|dat|jpe?g|png|doc|docx|xls|xlsx|htm)$/i',
         ),
-        // backend for ckeditor styles and templates
-//        'person' => array(
-//            'class' => 'vendor.dbrisinajumi.person.PersonModule',
-//        ),
+
         'email' => array(
             // path to the EmailModule class
             'class' => 'vendor.cornernote.yii-email-module.email.EmailModule',
@@ -221,127 +208,7 @@ $mainConfig = array(
             'yiiStrapPath' => realpath($applicationDirectory . '/../../../vendor/crisu83/yiistrap'),
         ),        
         
-        'ckeditorConfigurator' => array(
-            'class' => 'vendor.schmunk42.ckeditor-configurator.CkeditorConfiguratorModule',
-        ),
-//        'p3admin'              => array(
-//            'class'  => 'vendor.phundament.p3admin.P3AdminModule',
-//            'params' => array('install' => false),
-//        ),
-//        'p3widgets'            => array(
-//            'class'  => 'vendor.phundament.p3widgets.P3WidgetsModule',
-//            'params' => array(
-//                'widgets' => array(
-//                    'CWidget'           => 'Basic HTML Widget',
-//                    'TbCarousel'        => 'Bootstrap Carousel',
-//                    'EFancyboxWidget'   => 'Fancy Box',
-//                    'P3ReferenceWidget' => 'Widget Copy'
-//                    // use eg. $> php composer.phar require yiiext/swf-object-widget to get the
-//                    // widget source; import widget class or set an alias.
-//                    #'ESwfObjectWidget' => 'SWF Object',
-//                ),
-//            ),
-//        ),
-        /*
-        'p3media'              => array(
-            'class'  => 'vendor.phundament.p3media.P3MediaModule',
-            'dataAlias'            => 'root.upload',
-            'params' => array(
-                'publicRuntimePath'    => 'www/runtime/p3media',
-                'publicRuntimeUrl'     => '/runtime/p3media',
-                'protectedRuntimePath' => 'runtime/p3media',
-                'presets'              => array(
-                    'large'            => array(
-                        'name'     => 'Large 1600px',
-                        'commands' => array(
-                            'resize'  => array(1600, 1600, 2), // Image::AUTO
-                            'quality' => '85',
-                        ),
-                        'type'     => 'jpg',
-                    ),
-                    'medium'           => array(
-                        'name'     => 'Medium 800px',
-                        'commands' => array(
-                            'resize'  => array(800, 800, 2), // Image::AUTO
-                            'quality' => '85',
-                        ),
-                        'type'     => 'jpg',
-                    ),
-                    'medium-crop'      => array(
-                        'name'     => 'Medium cropped 800x600px',
-                        'commands' => array(
-                            'resize'  => array(800, 600, 7), // crop
-                            'quality' => '85',
-                        ),
-                        'type'     => 'jpg',
-                    ),
-                    'small'            => array(
-                        'name'     => 'Small 400px',
-                        'commands' => array(
-                            'resize'  => array(400, 400, 2), // Image::AUTO
-                            'quality' => '85',
-                        ),
-                        'type'     => 'jpg',
-                    ),
-                    'icon-32'          => array(
-                        'name'     => 'Icon 32x32',
-                        'commands' => array(
-                            'resize' => array(32, 32),
-                        ),
-                        'type'     => 'png'
-                    ),
-                    'original'         => array(
-                        'name'         => 'Original File',
-                        'originalFile' => true,
-                    ),
-                    'original-public'  => array(
-                        'name'         => 'Original File Public',
-                        'originalFile' => true,
-                        'savePublic'   => true,
-                    ),
-                    'download'         => array(
-                        'name'         => 'Download File',
-                        'originalFile' => true,
-                        'attachment'   => true,
-                    ),
-                    'p3media-ckbrowse' => array(
-                        'commands' => array(
-                            'resize' => array(150, 120), // use third parameter for master setting, see Image constants
-                            #'quality' => 80, // for jpegs
-                        ),
-                        'type'     => 'png'
-                    ),
-                    'p3media-manager'  => array(
-                        'commands' => array(
-                            'resize' => array(300, 200), // use third parameter for master setting, see Image constants
-                            #'quality' => 80, // for jpegs
-                        ),
-                        'type'     => 'png'
-                    ),
-                    'p3media-upload'   => array(
-                        'commands' => array(
-                            'resize' => array(60, 30), // use third parameter for master setting, see Image constants
-                            #'quality' => 80, // for jpegs
-                        ),
-                        'type'     => 'png'
-                    ),
-                )
-            ),
-        ),
-         *
-         */
-//        'p3pages'              => array(
-//            'class'  => 'vendor.phundament.p3pages.P3PagesModule',
-//            'params' => array(
-//                'availableLayouts' => array(
-//                    '//layouts/main' => 'Main Layout',
-//                ),
-//                'availableViews'   => array(
-//                    '//p3pages/column1' => 'One Column',
-//                    '//p3pages/column2' => 'Two Columns',
-//                )
-//            ),
-//        ),
+
         'rights'               => array(
             'class'        => 'vendor.crisu83.yii-rights.RightsModule',
             'appLayout'    => '//layouts/_main',
@@ -499,11 +366,6 @@ $mainConfig = array(
             // use 'site/error' action to display errors
             'errorAction' => 'site/error',
         ),
-        'image'         => array(
-            'class'  => 'vendor.phundament.p3extensions.components.image.CImageComponent',
-            // GD or ImageMagick
-            'driver' => 'GD',
-        ),
         'returnUrl'     => array(
             'class' => 'vendor.phundament.p3extensions.components.P3ReturnUrl', // TODO: can this be removed?
         ),
@@ -567,12 +429,6 @@ $mainConfig = array(
                 // standard login page URL
                 '<lang:[a-z]{2}(_[a-z]{2})?>/site/login' => 'user/login',
                 'site/login'                             => 'user/login',
-                // p3pages - SEO
-                '<lang:[a-z]{2}(_[a-z]{2})?>/<pageName:[a-zA-Z0-9-._]*>-<pageId:\d+>.html'
-                                                         => 'p3pages/default/page',
-                // p3media - SEO
-                '<lang:[a-z]{2}(_[a-z]{2})?>/img/<preset:[a-zA-Z0-9-._]+>/<title:.+>_<id:\d+><extension:.[a-zA-Z0-9]{1,}+>'
-                                                               => 'p3media/file/image',
                 // Yii
                 '<lang:[a-z]{2}(_[a-z]{2})?>/pages/<view:\w+>' => 'site/page',
                 '<controller:\w+>/<id:\d+>'                    => '<controller>/view',

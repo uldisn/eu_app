@@ -27,7 +27,7 @@ $consoleConfig = array(
     'aliases'    => array(
         'vendor' => $applicationDirectory . '/../../../vendor',
         'webroot' => $applicationDirectory . '/../../../www',
-        'gii-template-collection'              => 'vendor.phundament.gii-template-collection', // TODO
+        //'gii-template-collection'              => 'vendor.phundament.gii-template-collection', // TODO
         'audittrail' => 'vendor.dbrisinajumi.audittrail',
     ),
     'basePath'   => dirname(__FILE__) . DIRECTORY_SEPARATOR . '..',
@@ -54,13 +54,6 @@ $consoleConfig = array(
             'applicationModuleName' => 'core',
             // define all available modules (if you do not set this, modules will be set from yii app config)
             'modulePaths'           => array(
-                //'rights'                => 'application.migrations.rights',
-                //'user'                  => 'vendor.mishamx.yii-user.migrations',
-                //'p3pages'               => 'vendor.phundament.p3pages.migrations',
-                //'p3widgets'             => 'vendor.phundament.p3widgets.migrations',
-                //'p3media'               => 'vendor.phundament.p3media.migrations',
-                //'ckeditor-configurator' => 'vendor.schmunk42.ckeditor-configurator.migrations',
-                //'audittrail'            => 'vendor.dbrisinajumi.audittrail.migrations',
                 'd2finv'                  => 'vendor.dbrisinajumi.d2finv.migrations',
 				'vvoy'                    => 'vendor.uldisn.vvoy.migrations',
 				'trucks'                  => 'vendor.dbrisinajumi.trucks.migrations',
@@ -68,6 +61,9 @@ $consoleConfig = array(
                 'yeeki'                   => 'vendor.dbrisinajumi.yeeki.migrations',
                 'd2files'                 => 'vendor.dbrisinajumi.d2files.migrations',
                 'd2person'                 => 'vendor.dbrisinajumi.d2person.migrations',
+                'd2company'               => 'vendor.dbrisinajumi.d2company.migrations',    
+                'd2tasks'                 => 'vendor.dbrisinajumi.d2tasks.migrations',    
+                
             ),
             // you can customize the modules migrations subdirectory which is used when you are using yii module config
             'migrationSubPath'      => 'migrations',
@@ -78,73 +74,11 @@ $consoleConfig = array(
             // alias of the template file used to create new migrations
             #'templateFile' => 'system.cli.migration_template',
         ),
-        // composer callback
-        'p3bootstrap'   => array(
-            'class'           => 'vendor.phundament.p3bootstrap.commands.P3BootstrapCommand',
-            'themePath'       => 'application.themes',
-        ),
-        // composer callback
-        'p3echo'        => array(
-            'class' => 'application.commands.P3EchoCommand',
-        ),
-        // composer callback
-        'p3media'       => array(
-            'class' => 'vendor.phundament.p3media.commands.P3MediaCommand',
-        ),
-        // composer callback
-        'less-setup'    => array(
-            'class' => 'vendor.crisu83.yii-less.commands.LessSetupCommand',
-        ),
-        // media file sync
-        'rsync'         => array(
-            'class'   => 'vendor.phundament.p3extensions.commands.P3RsyncCommand',
-            'servers' => array(
-                'local'      => realpath(dirname(__FILE__) . '/..'),
-                'production' => 'user@example.com:/path/to/phundament/app',
-            ),
-            'aliases' => array(
-                'p3media' => 'application.data.p3media' # Note: This setting syncs P3Media Files
-            ),
-            #'params' => '--rsh="ssh -p222"',
-        ),
-        // composer callback
-        'webapp'        => array(
-            'class' => 'application.commands.P3WebAppCommand',
-        ),
-        // composer callback
-        'backend-theme' => array(
-            'class'     => 'vendor.phundament.backend-theme.commands.PhBackendThemeCommand',
-            'themePath' => 'application.themes',
-            'themeName' => 'backend2',
-        ),
     ),
     'params'     => 
     CMap::mergeArray(
             $mainConfig['params'],
             array(
-        'composer.callbacks' => array(
-            // command and args for Yii command runner
-            'yiisoft/yii-install'              => $webappCommand,
-            'phundament/p3bootstrap-install'   => array('yiic', 'p3bootstrap'),
-            'phundament/backend-theme-install' => array('yiic', 'backend-theme'),
-            'phundament/p3media-install'       => array('yiic', 'p3media'),
-            'crisu83/yii-less-install'         => array('yiic', 'less-setup'),
-            'post-install'                     => array(
-                'yiic',
-                'p3echo',
-                "To complete the installation process, please run\n\n    app/yiic migrate\n\nfrom your project directory."
-            ),
-            'post-update'                      => array(
-                'yiic',
-                'p3echo',
-                "To complete the update process, please run:\n\n    app/yiic migrate\n\nfrom your project directory."
-            ),
-            #'post-install'                     => array(
-            #                                          array('yiic', 'migrate', '--interactive=1'),
-            #                                          array('yiic', 'foo', '--bar=1'),
-            #                                      ),
-            #'post-update'                      => array('yiic', 'migrate', '--interactive=1'),
-        ),
     ))
 );
 

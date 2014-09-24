@@ -75,8 +75,8 @@ $aMenuOfficeCompanies = array(
 
             foreach (Yii::app()->sysCompany->getClientCompanies() as $mCcmp) {
                 $aMenuOfficeCompanies['items'][] = array(
-                'label' => $mCcmp->ccucCcmp->ccmp_name,
-                            'url' => array_merge(array(''), $_GET, array(Yii::app()->sysCompany->data_key => $mCcmp->ccucCcmp->ccmp_id)),
+                'label' => $mCcmp['ccmp_name'],
+                            'url' => array_merge(array(''), $_GET, array(Yii::app()->sysCompany->data_key => $mCcmp['ccmp_id'])),
     );
 }
         }
@@ -222,27 +222,6 @@ $this->widget(
         <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-small btn-inverse">
 			<i class="icon-double-angle-up icon-only bigger-110"></i>
 		</a>
-
-        
-       
-
-<!-- /container -->
-
-<?php
-
-if (Yii::app()->user->checkAccess('Editor') && FALSE) {
-    ?>
-<div id="backend">
-    <?php
-    $cs->registerCssFile($app_asset_path . '/backend.css');
-    $this->renderFile(
-        Yii::getPathOfAlias('application.themes.backend2.views.layouts') . DIRECTORY_SEPARATOR . '_navbar.php'
-    );
-    ?>
-</div>
-    <?php
-}
-?>
 
 <?php
 
