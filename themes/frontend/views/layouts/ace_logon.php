@@ -83,7 +83,7 @@ $this->widget(
                             'url' => array_merge(array(''), $_GET, array('lang' => 'en'))
                         ),
                         array(
-                            'label' => 'Latvieðu',
+                            'label' => 'LatvieÅ¡u',
                             'url' => array_merge(array(''), $_GET, array('lang' => 'lv'))
                         ),
                     ),
