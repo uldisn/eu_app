@@ -123,6 +123,7 @@ $mainConfig = array(
         'vendor.dbrisinajumi.d2fixr.models.*',                
         'vendor.uldisn.vvoy.*',                
         'vendor.uldisn.vvoy.models.*',                
+        'vendor.uldisn.ace.widgets.*',                
     ),
     'modules'    => array(
         'wiki' => array(

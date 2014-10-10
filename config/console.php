@@ -62,7 +62,8 @@ $consoleConfig = array(
                 'd2files'                 => 'vendor.dbrisinajumi.d2files.migrations',
                 'd2person'                 => 'vendor.dbrisinajumi.d2person.migrations',
                 'd2company'               => 'vendor.dbrisinajumi.d2company.migrations',    
-                'd2tasks'                 => 'vendor.dbrisinajumi.d2tasks.migrations',    
+                'yii-user'                => 'vendor.uldisn.yii-user.migrations',                         
+                //'d2tasks'                 => 'vendor.dbrisinajumi.d2tasks.migrations',    
                 
             ),
             // you can customize the modules migrations subdirectory which is used when you are using yii module config
