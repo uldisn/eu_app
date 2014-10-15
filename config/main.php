@@ -215,9 +215,9 @@ $mainConfig = array(
             'appLayout'    => '//layouts/_main',
             'userIdColumn' => 'id',
             'userClass'    => 'User',
-            'cssFile'      => '/themes/backend/css/yii-rights.css'
+            'cssFile'      => '/themes/backend/css/yii-rights.css',
             #'install' => true, // Enables the installer.
-            #'superuserName' => 'admin'
+            'superuserName' => 'Admin'
         ),
 		'user' => array(
 			'class' => 'vendor.uldisn.yii-user.UserModule',
