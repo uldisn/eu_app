@@ -517,11 +517,6 @@ $mainConfig = array(
                 
             ),
         ),
-        'clientScript' => array(
-            'scriptMap' => array(
-                'jquery-ui.css' => '/assets/945711c3/css/jquery-ui-1.10.3.full.min.css',
-            ),
-        ),
         'request'=>array('enableCsrfValidation'=>false),
         
     ),
