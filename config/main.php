@@ -59,10 +59,6 @@ $mainConfig = array(
         // componentns
         'bootstrap'                            => 'vendor.clevertech.yiibooster.src',
         'editable'                             => 'vendor.vitalets.x-editable-yii',
-        // p3widgets
-        //'jsonEditorView'                       => 'vendor.phundament.p3extensions.widgets.jsonEditorView',
-        //'ckeditor'                             => 'vendor.phundament.p3extensions.widgets.ckeditor',
-        // p3media
         'jquery-file-upload'                   => 'vendor.phundament.jquery-file-upload',
         'jquery-file-upload-widget'            => 'vendor.phundament.p3extensions.widgets.jquery-file-upload',
         'swiftMailer' => 'vendor.swiftmailer.swiftmailer.lib',
@@ -129,10 +125,7 @@ $mainConfig = array(
         'wiki' => array(
             'class' => 'vendor.dbrisinajumi.yeeki.WikiModule',
         ),
-//        'hill' => array( //++
-//            'class' => 'vendor.uldisn.hill.HillModule',
-//        ),
-        'vvoy' => array( //++
+        'vvoy' => array( 
             'class' => 'vendor.uldisn.vvoy.VvoyModule',
             'defaultController' => 'vvoyVoyage',
             'driver_person_type' => 1,   // autovadītājs
@@ -235,7 +228,16 @@ $mainConfig = array(
 				'path'=>'TbDetailView',
 				'options'=>array(),
 			),
-            'UserAdminRoles' => array('Accounting','Cars','DataCards','Finance','FuelOperator','UserAdmin','InvoiceEdit','InvoiceView',),
+            'UserAdminRoles' => array(
+                'Accounting',
+                'Cars',
+                'DataCards',
+                'Finance',
+                'FuelOperator',
+                'UserAdmin',
+                'InvoiceEdit',
+                'InvoiceView',
+                ),
             'layout' =>'//layouts/ace',
             'view' => 'vendor.uldisn.ace.yii-user.views',            
 		),
@@ -513,6 +515,11 @@ $mainConfig = array(
                     'cssFile'=>false,
                 ),
                 
+            ),
+        ),
+        'clientScript' => array(
+            'scriptMap' => array(
+                'jquery-ui.css' => '/assets/945711c3/css/jquery-ui-1.10.3.full.min.css',
             ),
         ),
         'request'=>array('enableCsrfValidation'=>false),
