@@ -90,18 +90,13 @@ $this->widget('vendor.uldisn.ace.widgets.TbAceMenu', array(
                     'visible' => Yii::app()->user->checkAccess(ROLE_FINANCES),
                 ),
                 array(
+                    'label' => Yii::t('dbr_app', 'Trucks odometers'),
+                    'url' => array('/trucks/vodoOdometer'),
+                    'visible' => Yii::app()->user->checkAccess(ROLE_FINANCES),
+                ),
+                array(
                     'label' => Yii::t('dbr_app', 'Trailers'),
                     'url' => array('/trucks/vtrlTrailer'),
-                    'visible' => Yii::app()->user->checkAccess(ROLE_FINANCES),
-                ),
-                array(
-                    'label' => Yii::t('dbr_app', 'Odometers Replacements'),
-                    'url' => array('/trucks/vtcoTrucOdoChanges'),
-                    'visible' => Yii::app()->user->checkAccess(ROLE_FINANCES),
-                ),
-                array(
-                    'label' => Yii::t('dbr_app', 'Odometers Readings'),
-                    'url' => array('/trucks/vtroTruckOdometer'),
                     'visible' => Yii::app()->user->checkAccess(ROLE_FINANCES),
                 ),
                 array(
