@@ -168,6 +168,11 @@ $this->widget('vendor.uldisn.ace.widgets.TbAceMenu', array(
                     'url' => array('/d2fixr/FixrFiitXRef/FinvInvoice'),
                     'visible' => (Yii::app()->user->checkAccess('InvoiceEdit') || Yii::app()->user->checkAccess('InvoiceView')),
                 ),
+                array(
+                    'label' => Yii::t('dbr_app', 'Dim.definition'),
+                    'url' => array('/d2fixr/fdm1Dimension1'),
+                    //'visible' => (Yii::app()->user->checkAccess('InvoiceEdit') || Yii::app()->user->checkAccess('InvoiceView')),
+                ),
             )
         ),
         array(
