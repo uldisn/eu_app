@@ -151,9 +151,9 @@ $mainConfig = array(
             'class' => 'vendor.dbrisinajumi.d2fixr.D2fixrModule',
             //'defaultController' => 'FinvInvoice',
         ),
-        'fueling'=> array( //++
-            'class' => 'vendor.uldisn.fuel.FuelingModule',//++
-        ),
+//        'fueling'=> array( //++
+//            'class' => 'vendor.uldisn.fuel.FuelingModule',//++
+//        ),
         'fcrn'=> array( //++
             'class' => 'vendor.dbrisinajumi.fcrn.FcrnModule',//++
             'defaultController' => 'fcrtCurrencyRate',
