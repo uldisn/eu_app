@@ -46,4 +46,6 @@ return array (
   'Trucks' => 'Vilcēji',
   'Truck/trailer services' => 'Vilc./Piek. darbi',
   'Truck/trailer doc. types' => 'Vilc./Piek. dok. veidi',
+  'Voyages' => 'Reisi',
+  'Users' => 'Lietotāji',
 );
