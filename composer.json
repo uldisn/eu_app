@@ -27,7 +27,7 @@
         "uldisn/ace": "0.1.*",
         "uldisn/yii-user": "dev-master",
         
-        "dbrisinajumi/DbrLib": "dev-master",
+        "dbrisinajumi/DbrLib": "dev-master", 
         "dbrisinajumi/d2company": "dev-master",
         "dbrisinajumi/d2person": "dev-master",
          
