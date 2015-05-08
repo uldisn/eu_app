@@ -122,6 +122,13 @@ $mainConfig = array(
         'vendor.uldisn.ace.widgets.*',                
     ),
     'modules'    => array(
+        'session' => array (
+            'sessionName' => 'kods',
+            'cookieMode' => 'only',
+//            'class' => 'system.web.CDbHttpSession',
+//            'connectionID' => 'db',
+//            'sessionTableName' => 's_sessions',
+        ),
         'wiki' => array(
             'class' => 'vendor.dbrisinajumi.yeeki.WikiModule',
         ),
@@ -168,18 +175,18 @@ $mainConfig = array(
                 //'company_managers',
                 //'company_customers',
                 //'company_cars',
-                'company_files',
+                //'company_files',
             ),
             'defaultController' => 'ccmpCompany',
         ),//++
         'D1Status'=> array( //++
             'class' => 'vendor.dbrisinajumi.d1status.D1StatusModule',//++
         ),
-        'd1files' => array(
-             'class' => 'vendor.dbrisinajumi.d1files.D1filesModule',
-             'upload_dir' => 'root.eu_upload',
-             'accept_file_types' => '/\.(gif|pdf|dat|jpe?g|png|doc|docx|xls|xlsx)$/i',
-        ),          
+//        'd1files' => array(
+//             'class' => 'vendor.dbrisinajumi.d1files.D1filesModule',
+//             'upload_dir' => 'root.eu_upload',
+//             'accept_file_types' => '/\.(gif|pdf|dat|jpe?g|png|doc|docx|xls|xlsx)$/i',
+//        ),          
         'd2files' => array(
              'class' => 'vendor.dbrisinajumi.d2files.D2filesModule',
              'upload_dir' => 'root.upload.d2files_' . basename(dirname($applicationDirectory)) . '_' . basename($applicationDirectory),
@@ -225,8 +232,10 @@ $mainConfig = array(
 				'buttonColumn' => 'TbButtonColumn',
 			),
 			'defaultDetailView' => array(
-				'path'=>'TbDetailView',
-				'options'=>array(),
+				'path'=>'TbAceDetailView',
+				'options'=>array(
+                    'label_width' => 140,
+                ),
 			),
             'UserAdminRoles' => array(
                 'Accounting',
@@ -240,6 +249,18 @@ $mainConfig = array(
                 ),
             'layout' =>'//layouts/ace',
             'view' => 'vendor.uldisn.ace.yii-user.views',            
+            'SecurityPolicy' => array(
+                'denyGuest'        => true,         // Allow guest to access only login page
+                'denyIpChanges'    => true,         // Logout if IP changed during session
+                'denyUaChanges'    => true,         // Logout if User Agent changed during session
+                'denyMultiSession' => true,         // Disable multiple sessions for the same user
+                'useIpTables'      => false,         // Check User access in uxip_user_x_ip_table
+                //'denyGuestExcept'  => array(        // Exceptions for denyGuest
+                //    'cbpromo/promo/validateCode',
+                //    'cbpromo/promo/list',
+                //    'cbpromo/promo/finish',
+                //)
+            ),
 		),
         'audittrail' => array(//++
             'class' => 'vendor.dbrisinajumi.audittrail.AudittrailModule', 
@@ -347,10 +368,10 @@ $mainConfig = array(
         'db'            => array(
             'tablePrefix'      => '',
             // MySQL
-            'connectionString' => 'mysql:host=localhost;dbname=eu',
+            'connectionString' => 'mysql:host=localhost;dbname=',
             'emulatePrepare' => true,
-            'username' => 'root',
-            'password' => '111',
+            'username' => '',
+            'password' => '',
             'charset' => 'utf8',
             'enableProfiling'=>true,
             'enableParamLogging'=>true,
@@ -607,7 +628,10 @@ $mainConfig = array(
         'AuditTrail' => array(
             'table' =>'s_audit_trail',
         ),
-        'ace_assets' => realpath($applicationDirectory . '/../../../vendor/responsiweb/ace-v1.2--bs-v2.3.x/assets'),
+        'ace_assets' => realpath($applicationDirectory . '/../../../vendor/ace_admin/v_2_3/assets'),
+        'theme_settings' => array(
+            'widgets_view_path' => 'vendor.uldisn.ace.widgets.views',
+        ),  
     ),
 );
 

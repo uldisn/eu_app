@@ -29,10 +29,9 @@
     $cs->registerCssFile($asset_link . '/css/ace-fonts.css');
     $cs->registerCssFile($asset_link . '/css/jquery-ui-1.10.3.full.min.css');
     $cs->registerCssFile($asset_link . '/css/ace.min.css');
-    $cs->registerCssFile($asset_link . '/css/ace-responsive.min.css');
+    //$cs->registerCssFile($asset_link . '/css/ace-responsive.min.css');
     $cs->registerCssFile($asset_link . '/css/ace-skins.min.css');
     $cs->registerCssFile($asset_link_ace_add . '/css/d2-ace.css');
-    
     Yii::app()->clientScript->scriptMap=array('jquery-ui.css' => $asset_link . '/css/jquery-ui-1.10.3.full.min.css');
     //$cs->registerCssFile($app_asset_path . '/parkoil-ace.css');    
     //$cs->registerCssFile($app_asset_path . '/parkoil.css');    
@@ -64,6 +63,10 @@
                                         
 
         <?php
+        
+/**
+ * SysCompanies
+ */        
         $aMenuOfficeCompanies = array();
         if (Yii::app()->sysCompany->getActiveCompanyName()) {
 $aMenuOfficeCompanies = array(
@@ -82,44 +85,53 @@ $aMenuOfficeCompanies = array(
     );
 }
         }
+
+/**
+ * language
+ */
+$aMenuLanguages = [];
+$languages = Yii::app()->langHandler->languages;
+if (count($languages) > 1) {
+    
+    $lang_items = [];
+    $lang_items[] = ['label' => Yii::t('app', 'Languages')];
+    
+    $al = [
+        'en' => 'English',
+        'lv' => 'Latvieðu',
+        'lt' => 'Lietuviø',
+        'ru' => '???????',
+    ];
+    foreach($languages as $code){
+        $lang_items[] = [
+            'label' => $al[$code],
+            'url' => array_merge(array(''),$_GET, array('lang' => $code))
+        ];
+    }
+  $aMenuLanguages = [
+        'label' => Yii::app()->language,
+        'icon' => 'globe white',
+        'url' => '#',
+        'items' => $lang_items,
+      ];
+}
+
+
 $this->widget(
     'TbNavbar', array(
     'collapse' => true,
-           // 'brand' => '<img alt="" src="/assets/7d883f12/img/ParkOilLogoTransparent.png">',
-            //'brandOptions' => array('class' => 'parkoil_logo'),
     'fixed' => false,
-            //'htmlOptions' => array('class' => 'pull-left'),
             'htmlOptions' => array('class' => 'navbar'),
     'fluid' => true,    
     'items' => array(
         array(
-            //'class' => 'TbMenu',
             'class' => 'vendor.uldisn.ace.widgets.TbAceHrMenu',
             'htmlOptions' => array('class' => 'ace-nav pull-right'),
             'items' => array(
                 $aMenuOfficeCompanies,
+                $aMenuLanguages,
                 array(
-                    'label' => Yii::app()->language,
-                    'icon' => 'globe white',
-                    'url' => '#',
-                    //'itemCssClass' => 'light-blue',
-                    'items' => array(
-                        array(
-                            'label' => Yii::t('app', 'Languages')
-                            ),
-                        array(
-                            'label' => 'English',
-                            'url' => array_merge(array(''), $_GET, array('lang' => 'en'))
-                        ),
-                        array(
-                            'label' => 'LatvieÅ¡u',
-                            'url' => array_merge(array(''), $_GET, array('lang' => 'lv'))
-                        ),
-                    ),
-                ),
-                array(
-                    'label' => (Yii::app()->user->isGuest?Yii::app()->user->name:$user->profile->first_name." ".$user->profile->last_name."(".ucfirst(Yii::app()->user->name).")"),
-                    'visible' => !Yii::app()->user->isGuest,
+                    'label' => $user->profile->first_name." ".$user->profile->last_name."(".ucfirst(Yii::app()->user->name).")",
                     'icon' => 'user white',
                     'items' => array(
                         array('label' => Yii::t('app', 'User')),
@@ -138,7 +150,6 @@ $this->widget(
                             'label' => Yii::t('app', 'Logout'),
                             'icon' => 'icon-off',
                             'url' => array('/site/logout'),
-                            'visible' => !Yii::app()->user->isGuest
                         ),
                     )
                 ),
@@ -180,45 +191,6 @@ $this->widget(
 					</div><!-- /.row-fluid -->
 				</div><!-- /.page-content -->
 
-				<div class="ace-settings-container" id="ace-settings-container">
-					<div class="btn btn-app btn-mini btn-warning ace-settings-btn" id="ace-settings-btn">
-						<i class="icon-cog bigger-150"></i>
-					</div>
-
-					<div class="ace-settings-box" id="ace-settings-box">
-						<div>
-							<div class="pull-left">
-								<select id="skin-colorpicker" class="hide">
-									<option data-skin="default" value="#438EB9">#438EB9</option>
-									<option data-skin="skin-1" value="#222A2D">#222A2D</option>
-									<option data-skin="skin-2" value="#C6487E">#C6487E</option>
-									<option data-skin="skin-3" value="#D0D0D0">#D0D0D0</option>
-								</select>
-							</div>
-							<span>&nbsp; Choose Skin</span>
-						</div>
-
-						<div>
-							<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-navbar" />
-							<label class="lbl" for="ace-settings-navbar"> Fixed Navbar</label>
-						</div>
-
-						<div>
-							<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-sidebar" />
-							<label class="lbl" for="ace-settings-sidebar"> Fixed Sidebar</label>
-						</div>
-
-						<div>
-							<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-breadcrumbs" />
-							<label class="lbl" for="ace-settings-breadcrumbs"> Fixed Breadcrumbs</label>
-						</div>
-
-						<div>
-							<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-rtl" />
-							<label class="lbl" for="ace-settings-rtl"> Right To Left (rtl)</label>
-						</div>
-					</div>
-				</div><!-- /#ace-settings-container -->
 			</div><!-- /.main-content -->
 		</div><!-- /.main-container -->
         <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-small btn-inverse">
