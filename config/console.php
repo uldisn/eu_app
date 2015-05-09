@@ -62,6 +62,7 @@ $consoleConfig = array(
                 'd2files'                 => 'vendor.dbrisinajumi.d2files.migrations',
                 'd2person'                 => 'vendor.dbrisinajumi.d2person.migrations',
                 'd2company'               => 'vendor.dbrisinajumi.d2company.migrations',    
+                'd2company'               => 'vendor.dbrisinajumi.fcrn.migrations',    
                 'yii-user'                => 'vendor.uldisn.yii-user.migrations',                         
                 //'d2tasks'                 => 'vendor.dbrisinajumi.d2tasks.migrations',    
                 

@@ -84,6 +84,7 @@ $mainConfig = array(
         'audittrail.models.*', //++
         'audittrail.behaviors.*', //++
         'vendor.schmunk42.relation.behaviors.*', //++
+        'vendor.schmunk42.relation.widgets.*', //++
         'vendor.dbrisinajumi.d2company.models.*', //++
         'vendor.dbrisinajumi.fcrn.models.*', //++
         'vendor.uldisn.fuel.models.*', //++
